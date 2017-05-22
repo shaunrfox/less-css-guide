@@ -1,0 +1,66 @@
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * BUTTONS
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+@mixin button-style() {
+  @include unstyled-button();
+  @include source-sans();
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  line-height: 28px;
+  @include font-size(1.5);
+  font-weight: 600;
+  padding: 0 10px;
+  text-decoration: none;
+  @include border-radius-all(2px);
+  border: 1px solid rgba($off-black, .3);
+  cursor: pointer;
+
+  &:active { border: 1px solid rgba($off-black, .2); }
+  &:focus { outline: 0; }
+
+  &:disabled,
+  &[disabled=disabled] {
+    opacity: 0.4;
+
+    &:hover,
+    &:active { cursor: default; }
+  }
+}
+
+@mixin button($background-color, $text-color) {
+  @include button-style();
+  background: $background-color;
+  color: $text-color;
+  @if $text-color == $white{
+    text-shadow: 1px 1px 1px rgba($off-black, 0.4);
+  }
+
+  &:hover {
+    background: tint($background-color, 90);
+    text-decoration: none;
+  }
+  &:active { background: shade($background-color, 90); }
+  &:disabled,
+  &[disabled=disabled] {
+    &:hover,
+    &:active { background: tint($background-color, 90); }
+  }
+}
+
+.button {
+  @include button($off-white, $off-black);
+
+  &.action { @include button($blue, $white); }
+
+  &.action-orange { @include button($orange, $white); }
+
+  &.large {
+    height: 40px;
+    line-height: 38px;
+    @include font-size(2);
+  }
+}

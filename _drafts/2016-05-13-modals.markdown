@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "Modals"
+date:   2016-05-13
+categories: HTML
+---
+
+We use Bootstrap's modal html and javascript. Here's the basic markup:
+
+{% highlight html %}
+{% endhighlight %}

@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Front-end Style Guide</title>
+    <description>This site is meant to help us unify our front-end code. These are the documented best-practises for front-end code structure. You can help us maintain this project by submitting your own examples of best practises you come across.
+</description>
+    <link>/style-guide/</link>
+    <atom:link href="/style-guide/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 09 Sep 2016 13:55:00 -0500</pubDate>
+    <lastBuildDate>Fri, 09 Sep 2016 13:55:00 -0500</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>SCSS Primer</title>
+        <description>
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/scss/2016/05/20/scss-primer.html</link>
+        <guid isPermaLink="true">/style-guide/css/scss/2016/05/20/scss-primer.html</guid>
+        
+        
+        <category>CSS</category>
+        
+        <category>SCSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Text Handling</title>
+        <description>&lt;h2 id=&quot;font-family&quot;&gt;font-family&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-depends-on-your-project&quot;&gt;EXAMPLE VALUES: Depends on your project.&lt;/h5&gt;
+
+&lt;p&gt;To set what font gets used, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;font-family&lt;/code&gt; property. In most of our projects this is done for you in our base css.&lt;/p&gt;
+
+&lt;p&gt;However, if you want to change what font is used, you should have numerous fallbacks like.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Source Sans Pro&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Verdana&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Helvetica&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In this example Verdana will be used if the broswer does not have access to “Source Sans Pro”, then Helvetica, etc…&lt;/p&gt;
+
+&lt;p&gt;If you want to have them download a font, you’ll want to use &lt;code class=&quot;highlighter-rouge&quot;&gt;@font-face&lt;/code&gt;. Here’s a helpful resource &lt;strong&gt;TODO PROVIDE RESOURCE&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;font-size&quot;&gt;font-size&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-12px-12rem-14rem-16rem&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;12px&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;1.2rem&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;1.4rem&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;1.6rem&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt; controls how big the words will appear.&lt;/p&gt;
+
+&lt;p&gt;There are several units you can use, but we recommend pixels (&lt;code class=&quot;highlighter-rouge&quot;&gt;px&lt;/code&gt;) and root ems (&lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt;). Root ems are a percentage of the font size set on the html element.&lt;/p&gt;
+
+&lt;p&gt;As part of our code, we have a mixin that you should use in most cases. It will take care of both rems and a pixel fallback.&lt;/p&gt;
+
+&lt;h3 id=&quot;usage&quot;&gt;usage&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;outputs&quot;&gt;outputs&lt;/h3&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;16px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.6rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;color&quot;&gt;color&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-off-black-ffffff-tintmid-grey-07-red-rgba255-255-255-05&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;$off-black&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;#ffffff&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;tint($mid-grey, 0.7)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$red&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rgba(255, 255, 255, 0.5)&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt; changes the color of the text.&lt;/p&gt;
+
+&lt;p&gt;In our code, we have variables corresponding to color values. &lt;a href=&quot;#scss-color-variables&quot;&gt;SCSS Color Variables&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;line-height&quot;&gt;line-height&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-12px-30px&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;12px&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;30px&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;line-height&lt;/code&gt; sets the vertical spacing between lines of text. We mostly use it to vertically center a single line of text. If there is a chance your text might wrap, use a different method as detailed by &lt;a href=&quot;https://css-tricks.com/centering-css-complete-guide/&quot;&gt;Centering in CSS: A Complete Guide, by CSS Tricks&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;For buttons, we commonly set the line-height to the height of the button to center the text vertically within the button.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;text-align&quot;&gt;text-align&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-center-left&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;center&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text-align&lt;/code&gt; is fairly straightforward. It aligns text. &lt;code class=&quot;highlighter-rouge&quot;&gt;text-align: center;&lt;/code&gt; should mostly only be used for text that does not wrap. Center-aligned text that wraps is more difficult to read.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;font-weight&quot;&gt;font-weight&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-normal400-semibold600-bold700&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;normal&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;400&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;semibold&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;600&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;bold&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;700&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;font-weight&lt;/code&gt; tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These three are the most common values we use with Source Sans Pro.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;font-style&quot;&gt;font-style&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-normal-italic&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;normal&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;italic&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;This attribute is basically used to set the text to italic. You only really need to set it to &lt;code class=&quot;highlighter-rouge&quot;&gt;normal&lt;/code&gt; if you’re overriding the &lt;code class=&quot;highlighter-rouge&quot;&gt;italic&lt;/code&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;text-transform&quot;&gt;text-transform&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-normal-uppercase&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;normal&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;uppercase&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text-transform&lt;/code&gt; will take the formatting of the given text and transform it to your defined value, most commonly to make something uppercase.&lt;/p&gt;
+
+&lt;p&gt;Uppercase text can be difficult to read, though, so we often pair this with &lt;code class=&quot;highlighter-rouge&quot;&gt;font-weight&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;letter-spacing&lt;/code&gt; to help with that, as seen below.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Shaun Fox&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;uppercase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;letter-spacing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;letter-spacing&quot;&gt;letter-spacing&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-1px-1em&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;1px&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;1em&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;This is typically paired with &lt;code class=&quot;highlighter-rouge&quot;&gt;text-transform&lt;/code&gt; as demonstrated above. It should only ever be used on uppercase text. If used with lowercase text, readability is sacrificed.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;text-decoration&quot;&gt;text-decoration&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-none-underline&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;underline&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration&lt;/code&gt; is most often used to override the default browser styling of anchor tags. Frequently we’ll set the anchor to &lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration: none&lt;/code&gt;, which removes the underline, but we’ll give it other attributes that help define it as a link. For example:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.link&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;white-space&quot;&gt;white-space&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-nowrap&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;nowrap&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;We primarily use &lt;code class=&quot;highlighter-rouge&quot;&gt;white-space: nowrap&lt;/code&gt; to force text to be one line, without wrapping. Most often used in conjunction with CSS truncation.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-text-handling.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-text-handling.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Selectors</title>
+        <description>&lt;p&gt;CSS selectors apply styling to all elements that match the given criteria.&lt;/p&gt;
+
+&lt;p&gt;In CSS, specificity and order matters. The most specific match will always apply it’s styles, and if there’s a tie, the last in the source-order will win.&lt;/p&gt;
+
+&lt;h2 id=&quot;class&quot;&gt;.class&lt;/h2&gt;
+
+&lt;p&gt;This is the most common way to attach styling to an element. Creating a good system for your class name scheme will help avoid collisions and provide clarity for everyone on the project.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;element&quot;&gt;Element&lt;/h2&gt;
+
+&lt;p&gt;This selector will affect all matching elements. For example, the css selector &lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; will affect all &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; elements.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;attribute-selectors&quot;&gt;Attribute selectors&lt;/h2&gt;
+
+&lt;p&gt;Sometimes it might be necessary to select elements based on their attributes if a class selector is not appropriate. Here are the most common use cases that we run into.&lt;/p&gt;
+
+&lt;h3 id=&quot;inputtypetext&quot;&gt;input[type=”text”]&lt;/h3&gt;
+
+&lt;p&gt;This is used to target all inputs with their type attributes set to “text”.&lt;/p&gt;
+
+&lt;h3 id=&quot;data-&quot;&gt;data-&lt;/h3&gt;
+
+&lt;p&gt;HTML allows custom attributes beginning with &lt;code class=&quot;highlighter-rouge&quot;&gt;data-&lt;/code&gt;. One example of where you could use this would be for a custom tooltip where you set &lt;code class=&quot;highlighter-rouge&quot;&gt;data-tooltip&lt;/code&gt; to be the content. Beware that this technique is not the best for accessibility or internationalization.&lt;/p&gt;
+
+&lt;h3 id=&quot;classico-&quot;&gt;[class=”ico-*”]&lt;/h3&gt;
+
+&lt;p&gt;This is a special selector that will allow you to target classes that are prefixed or suffixed with a set naming scheme. The &lt;a href=&quot;http://shaunfox.com/work/fox-icons.html&quot;&gt;Fox Icons&lt;/a&gt; are a good example of this.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;combining-selectors&quot;&gt;Combining Selectors&lt;/h2&gt;
+
+&lt;p&gt;Now that you know about the two basic selectors, there are various ways we can combine selectors to be more specific, or be more efficient.&lt;/p&gt;
+
+&lt;h3 id=&quot;selector-selector&quot;&gt;selector, selector&lt;/h3&gt;
+
+&lt;p&gt;To keep your code DRY, you can list selectors that will share the same attributes. You do this by putting all selectors in a comma separated list.&lt;/p&gt;
+
+&lt;h3 id=&quot;class-1class-2&quot;&gt;.class-1.class-2&lt;/h3&gt;
+
+&lt;p&gt;For an element that has multiple classes, the selector can be written: &lt;code class=&quot;highlighter-rouge&quot;&gt;.class-1.class-2&lt;/code&gt;. It’s important to note that this selector is more specific then either classes on their own. If you use a property that has been defined on either of the individual classes, this new selector will override it. If there are properties that are unique to any of the selectors, that property will not be overridden. The determination of how these rules are applied is called “cascading”.&lt;/p&gt;
+
+&lt;h3 id=&quot;selector-selector-1&quot;&gt;selector selector&lt;/h3&gt;
+
+&lt;p&gt;Adding a space between selectors targets the first selector’s children, who match the second selector.&lt;/p&gt;
+
+&lt;h5 id=&quot;example&quot;&gt;Example:&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class-1&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;div-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class-2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;div-2&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class-2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;div-3&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;class-2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;div-4&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.class-1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.class-2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.class-1&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.class-2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In this example, div-1 will be red. div-2 and div-3 will be green. div-4 will be blue.&lt;/p&gt;
+
+&lt;h3 id=&quot;selector--selector&quot;&gt;selector &amp;gt; selector&lt;/h3&gt;
+
+&lt;p&gt;This rule is similar to &lt;code class=&quot;highlighter-rouge&quot;&gt;selector selector&lt;/code&gt;, except it only selects the direct descendents, but will not go any further down the hierarchy.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;scss&quot;&gt;SCSS&lt;/h2&gt;
+
+&lt;p&gt;This section will cover selectors in SCSS. To read more about SCSS in gerneral, see the &lt;a href=&quot;#scss-primer&quot;&gt;SCSS Primer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;nesting&quot;&gt;nesting&lt;/h3&gt;
+
+&lt;p&gt;In SCSS, you can nest selectors to logically scope rules, but this should be used cautiosly to avoid making too many overly-specific selectors when they’re compiled.&lt;/p&gt;
+
+&lt;h5 id=&quot;nesting-example&quot;&gt;Nesting Example:&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h5 id=&quot;compiled&quot;&gt;Compiled:&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;&amp;amp;&lt;/h3&gt;
+
+&lt;p&gt;As you can see from the previous example, nesting introduces a space between the two rules. Often, though, you’ll want to have no space between selectors. To achieve this, add an &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&lt;/code&gt; before the nested selector.&lt;/p&gt;
+
+&lt;h5 id=&quot;ampersand-example&quot;&gt;Ampersand Example:&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.blue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h5 id=&quot;compiled-1&quot;&gt;Compiled:&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.box.blue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;browser-prefixes&quot;&gt;browser prefixes&lt;/h2&gt;
+
+&lt;p&gt;Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implememnted before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: &lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-ms&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-moz&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-o&lt;/code&gt;. This can be a hge hastle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;media-queries&quot;&gt;@media Queries&lt;/h2&gt;
+
+&lt;p&gt;In the new era of Responsive Web Design, things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.&lt;/p&gt;
+
+&lt;h5 id=&quot;example-1&quot;&gt;Example:&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// in a grid, two across
+&lt;/span&gt;  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;600px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// at 600px or less, it becomes a list
+&lt;/span&gt;    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;do-not-do-this&quot;&gt;Do not do this&lt;/h2&gt;
+
+&lt;h3 id=&quot;selecting-ids&quot;&gt;Selecting IDs&lt;/h3&gt;
+
+&lt;p&gt;IDs, when used properly, are unique and only used once. Targetting IDs, therefore, is inefficient and does not promote DRY code.&lt;/p&gt;
+
+&lt;h3 id=&quot;lots-of-nesting-in-scss&quot;&gt;Lots of nesting in SCSS&lt;/h3&gt;
+
+&lt;p&gt;Too much nesting in SCSS creates overly specific selectors, leading to poor performance and not reusable code.&lt;/p&gt;
+
+&lt;h3 id=&quot;important&quot;&gt;!important&lt;/h3&gt;
+
+&lt;p&gt;When CSS gets overly specific, it may be tempting to use &lt;code class=&quot;highlighter-rouge&quot;&gt;!important&lt;/code&gt; to get overrides to work, but DON’T DO IT. Use better selectors.&lt;/p&gt;
+
+&lt;h3 id=&quot;selecting-&quot;&gt;Selecting &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; will select EVERYTHING. We only use it once, to define the box-model. In general, there are not many other reasons to select all and it can become very computationally intensive.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-selectors.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-selectors.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Pseudo Selectors</title>
+        <description>&lt;p&gt;:hover, :active, :disabled, :first-child, :last-child, :nth-child&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-pseudo-selectors.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-pseudo-selectors.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Pseudo Elements</title>
+        <description>&lt;h2 id=&quot;before-amp-after&quot;&gt;:before &amp;amp; :after&lt;/h2&gt;
+
+&lt;p&gt;Every element on the web that can contain content (not img, input, br, hr, etc.) can be given additional pseudo elements.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:before&lt;/code&gt; will put it’s content before all of the parent’s children.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;:after&lt;/code&gt; will put it’s content after all of the parent’s children.&lt;/p&gt;
+
+&lt;h3 id=&quot;carrot-dangler&quot;&gt;Carrot Dangler&lt;/h3&gt;
+
+&lt;p&gt;This is used to make a small arrow that points to another element. We typically use this for special tooltips or dropdowns. You can see this more easily in the &lt;a href=&quot;http://codepen.io/shaunrfox/pen/mENJjv?editors=1100&quot;&gt;Codepen Example&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.parent-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Must set position for the carrot to work
+&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:before&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// IMPORTANT: pseudo elements will not display at all unless the content attribute is set. If you don&#39;t want any text, use the empty string.
+&lt;/span&gt;    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-12px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-12px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$light-grey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-pseudo-elements.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-pseudo-elements.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Overflow</title>
+        <description>
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-overflow.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-overflow.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Opacity</title>
+        <description>
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-opacity.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-opacity.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Layout</title>
+        <description>&lt;h2 id=&quot;position&quot;&gt;position&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-relative-absolute-fixed&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;relative&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;fixed&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;The position property manipulates the location of an element. Each value of this property will affect the element in a different way.&lt;/p&gt;
+
+&lt;h3 id=&quot;static&quot;&gt;static&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;static&lt;/code&gt; is the default position value of all elements on the web. If you don’t set the position explicitly, this is the position your element has.&lt;/p&gt;
+
+&lt;h3 id=&quot;relative&quot;&gt;relative&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;relative&lt;/code&gt; positioning will layout relative to it’s normal position. You can affect the position of the element by adding additional positioning properties, like &lt;code class=&quot;highlighter-rouge&quot;&gt;top&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;right&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;bottom&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;z-index&lt;/code&gt;. This will remain in the flow of other elements on the page.&lt;/p&gt;
+
+&lt;h3 id=&quot;absolute&quot;&gt;absolute&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt; positioning is always relative to it’s closest parent with &lt;code class=&quot;highlighter-rouge&quot;&gt;relative&lt;/code&gt; positioning. This will also be pulled out of the normal flow of the page, so it can overlap other elements.&lt;/p&gt;
+
+&lt;h3 id=&quot;fixed&quot;&gt;fixed&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fixed&lt;/code&gt; positioning is always relative to the &lt;em&gt;viewport&lt;/em&gt;, meaning it always stays in place, even when the page is scrolled. This is rarely used except sometime for things like headers, footers, or modals.&lt;/p&gt;
+
+&lt;h3 id=&quot;top-right-bottom-left&quot;&gt;top, right, bottom, left&lt;/h3&gt;
+
+&lt;h5 id=&quot;example-values-0-100--20px&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;100%&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-20px&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;These properties are used in conjunction with &lt;code class=&quot;highlighter-rouge&quot;&gt;relative&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt;, or &lt;code class=&quot;highlighter-rouge&quot;&gt;fixed&lt;/code&gt; positioning.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.parent-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nc&quot;&gt;.child-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// 20px from the top, left corner of it&#39;s parent, regardless of padding or other sibling elements.
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;z-index&quot;&gt;z-index&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-1--1-25&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;25&lt;/code&gt;&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The z-index property in CSS controls the vertical stacking order of elements that overlap. As in, which one appears as if it is physically closer to you. z-index only effects elements that have a position value other than static (the default). —CSS-Tricks&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Be both conscious and sensible with your z-index values. Avoid tacking on lots of zeros, but also leave yourself room to fill in between values if you need to.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;float&quot;&gt;float&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-left-right-none&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;right&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; is usually used when you want two or more block elements to be side-by-side. It’s easiest to see in a visual example: &lt;a href=&quot;http://codepen.io/bxyoung89/pen/WbLRve&quot;&gt;http://codepen.io/bxyoung89/pen/WbLRve&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;clear&quot;&gt;clear&lt;/h3&gt;
+
+&lt;p&gt;If you float things, the parent is not aware of their height. Using a clear fix solution forces the parent to respond to the height of it’s children.&lt;/p&gt;
+
+&lt;p&gt;You should use our handy mixin: &lt;code class=&quot;highlighter-rouge&quot;&gt;@include clearfix();&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;transform&quot;&gt;transform&lt;/h2&gt;
+
+&lt;h5 id=&quot;example-values-translatey-50&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;translateY(-50%)&lt;/code&gt;&lt;/h5&gt;
+
+&lt;p&gt;You can do a lot of things with transform, but usually we only use it for vertical centering. You should be careful with this property because it does not necessarily respect round pixel values and can cause things to become blurry.&lt;/p&gt;
+
+&lt;p&gt;Our mixin: &lt;code class=&quot;highlighter-rouge&quot;&gt;@include vertical-align();&lt;/code&gt; will vertically center a block element with unknown height inside a parent that’s larger (most of the time). (not to be confused with the &lt;code class=&quot;highlighter-rouge&quot;&gt;vertical-align&lt;/code&gt; property)&lt;/p&gt;
+
+&lt;p&gt;More info here: &lt;a href=&quot;https://css-tricks.com/centering-css-complete-guide/&quot;&gt;https://css-tricks.com/centering-css-complete-guide/&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;vertical-align&quot;&gt;vertical-align&lt;/h2&gt;
+
+&lt;p&gt;This is primarily used for aligning a collection of elements with &lt;code class=&quot;highlighter-rouge&quot;&gt;display: inline-block;&lt;/code&gt;. You’ll usually set this to &lt;code class=&quot;highlighter-rouge&quot;&gt;top&lt;/code&gt; so that the elements’ tops all line up.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-layout.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-layout.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Display</title>
+        <description>&lt;h5 id=&quot;example-values-inline-block-inline-block-table-none&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;inline&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;block&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;inline-block&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;table&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt;&lt;/h5&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Every element on a web page is a rectangular box. The display property in CSS determines just how that rectangular box behaves.” —CSS Tricks&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://css-tricks.com/almanac/properties/d/display/&quot;&gt;https://css-tricks.com/almanac/properties/d/display/&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;display-inline&quot;&gt;display: inline;&lt;/h2&gt;
+
+&lt;p&gt;These elements are things that behave like text. They’re primarily relative to a baseline and don’t have much ability to affect the layout of other elements on the page.&lt;/p&gt;
+
+&lt;p&gt;While many elements’ default state is inline, it’s not something that we set as an override very often, since we’re mostly wanting to deal with boxy things.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;display-block&quot;&gt;display: block;&lt;/h2&gt;
+
+&lt;p&gt;These elements are things like &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;section&amp;gt;&lt;/code&gt;. They will behave like rectangles and they’re the building blocks of web layouts.&lt;/p&gt;
+
+&lt;p&gt;The default width for &lt;code class=&quot;highlighter-rouge&quot;&gt;block&lt;/code&gt; elements is 100%, so they will stretch to the extent of their parent’s width.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;display-inline-block&quot;&gt;display: inline-block;&lt;/h2&gt;
+
+&lt;p&gt;This is kind of a mix of the two above. You can set some of the same “physical” characteristics of &lt;code class=&quot;highlighter-rouge&quot;&gt;block&lt;/code&gt;, but the element is still relative to a baseline (of text, for instance).&lt;/p&gt;
+
+&lt;p&gt;The default width for &lt;code class=&quot;highlighter-rouge&quot;&gt;inline-block&lt;/code&gt; elements is relative to the element’s contents.&lt;/p&gt;
+
+&lt;p&gt;If you want to center an element using &lt;code class=&quot;highlighter-rouge&quot;&gt;inline-block&lt;/code&gt;, you must set &lt;code class=&quot;highlighter-rouge&quot;&gt;text-align: center&lt;/code&gt; on it’s parent.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;display-table&quot;&gt;display: table&lt;/h2&gt;
+
+&lt;p&gt;This can be used to make regular block elements behave more like a table. For example, a parent element can be set to &lt;code class=&quot;highlighter-rouge&quot;&gt;display: table;&lt;/code&gt; and it will have children set to &lt;code class=&quot;highlighter-rouge&quot;&gt;display: table-row;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;display: table-cell;&lt;/code&gt;. This can be especially helpful when you need to display tabular data but also need to support a responsive environment.&lt;/p&gt;
+
+&lt;p&gt;Try to limit use of &lt;code class=&quot;highlighter-rouge&quot;&gt;display: table&lt;/code&gt; unless you’re showing tabluar data.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;display-none&quot;&gt;display: none&lt;/h2&gt;
+
+&lt;p&gt;The easiest way to hide elements on the page.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-display.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-display.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Cursor</title>
+        <description>
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/style-guide/css/2016/05/20/css-cursor.html</link>
+        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-cursor.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+  </channel>
+</rss>

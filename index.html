@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<section id="intro" class="intro">
+  <header class="post-title">
+    <h2>Introduction</h2>
+  </header>
+
+  <div class="post-content">
+    <p>This site is meant to help us unify our front-end code. These are the documented best-practices for front-end code structure.</p>
+  </div>
+</section>
+
+{% assign all-posts = (site.posts | sort: 'title') %}
+{% for post in all-posts %}
+  <section id="{{ post.slug }}" class="post" data-filter-id="{{ post.slug }}">
+    <header class="post-title">
+      <a class="post-title-hash" href="#{{ post.slug }}">#</a>
+      <h2>{{ post.title }}</h2>
+    </header>
+
+    <div class="meta">
+      {% for category in post.categories %}
+        <div class="category">{{ category }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="post-content">
+      {{ post.content }}
+    </div>
+
+  </section>
+{% endfor %}

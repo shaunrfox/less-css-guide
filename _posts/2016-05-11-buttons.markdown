@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "Buttons"
+date:   2016-05-11
+categories: HTML
+---
+
+Main button classes
+
+	.button
+	.button-action
+	.button-cancel
+	.icon-button
+
+Add-on classes
+
+	.small-button
+	.toggle-button
+
+HTML Structure
+
+{% highlight html %}
+<button class="button">A button</button>
+<button class="button-action">An action button</button>
+<button class="button-cancel">A cancel button</button>
+
+<a href="#" class="button">A link styled like a button</a>
+<a href="#" class="button-action">A link styled like an action button</a>
+<a href="#" class="button-cancel">A link styled like a cancel button</a>
+
+<button class="button small-button">A small button</button>
+
+<button class="button toggle-button">A Toggle Button</button>
+{% endhighlight %}
+
+[Live example on Codepen](http://codepen.io/shaunrfox/pen/dPZobW)

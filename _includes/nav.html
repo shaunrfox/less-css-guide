@@ -1,0 +1,17 @@
+<nav>
+	<header>
+		<a href="#intro" class="logo">{{ site.title }}</a>
+	</header>
+	<div class="filter-topics">
+		<input type="text" class="filter" placeholder="Type to Filter">
+		<svg viewBox="0 0 30 30" class="ico-search-color">
+		  <use xlink:href="#ico-search-color"></use>
+		</svg>
+	</div>
+	<ul>
+		{% assign all-posts = (site.posts | sort: 'title') %}
+    {% for post in all-posts %}
+      <li data-filter-id="{{ post.slug }}"><a class="page-link" href="#{{ post.slug }}" id="link-{{ post.slug }}">{{ post.title }}</a></li>
+    {% endfor %}
+	</ul>
+</nav>

@@ -1,0 +1,19 @@
+{
+  "name": "Code Style Guide",
+  "version": "1.0.0",
+  "homepage": "",
+  "authors": [
+    "Shaun Fox"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/svg"
+  ],
+  "dependencies": {
+    "fox-icons": "*"
+  }
+}
