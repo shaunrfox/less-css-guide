@@ -1,0 +1,114 @@
+/*
+* * * * * * * * * * * * * * * * * * *
+* BASE
+* * * * * * * * * * * * * * * * * * *
+*/
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	.roboto();
+	font-size: 62.5%;
+	color: @grey-850;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+body {
+	.clearfix();
+	font-size: 16px;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background-color: @white;
+}
+
+h1, h2, h3, h4 {
+	line-height: 1.2em;
+	margin: 0 0 15px 0;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 36px;
+	color: @grey-1100;
+}
+
+h2 {
+	font-size: 24px;
+	color: @grey-1100;
+}
+
+h3 {
+	font-size: 20px;
+	.uppercase();
+	color: @grey-1100;
+}
+
+h4 {
+	font-size: 16px;
+	.uppercase();
+	color: @grey-550;
+}
+
+p,
+.site-wrapper ul,
+.post-content ul,
+.post-content ol {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.6em;
+	margin: 0 0 1em 0;
+
+	&.note { color: @grey-550; }
+
+	a {
+		color: @blue-500;
+		text-decoration: none;
+		&:hover { text-decoration: underline; }
+	}
+}
+
+blockquote {
+	font-style: italic;
+	margin: 0 0 25px 0;
+	border-left: 1px solid @grey-300;
+	background: @blue-300;
+	padding: 15px;
+
+	p {
+		font-size: 24px;
+		line-height: 1.4em;
+
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+
+img {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	margin: 0;
+	padding: 0;
+}
+
+.rule, {
+	width: 100%;
+	float: left;
+	height: 1px;
+	display: block;
+	margin: 20px 0;
+}
+
+hr {
+	width: 100%;
+	border: none;
+	border-top: 1px solid @grey-300;
+	margin: 30px 0;
+}

@@ -1,0 +1,175 @@
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * BUTTONS
+ * * * * * * * * * * * * * * * * * * *
+ */
+
+.button-style() {
+  // Set apart because it applies to all buttons
+  .unstyled-button();
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: 30px;
+  line-height: 28px;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0 15px;
+  text-decoration: none;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+
+.button-base(
+  @background-color,
+  @background-color-hover,
+  @background-color-active,
+  @text-color,
+  @border-bottom-color,
+  @border-bottom-color-hover,
+  @border-top-color,
+  @border-top-color-active) {
+  .button-style();
+  background: @background-color;
+  color: @text-color !important; // temp overwriting anchor styling
+  border-top: 1px solid @background-color;
+  border-bottom: 1px solid @border-bottom-color;
+  box-shadow: 0 1px 1px fade(@grey-850, 30);
+  transition: ease all 200ms !important; // temp overwriting anchor styling
+  text-decoration: none;
+
+  & when (@text-color = @white) {
+    // text-shadow: 1px 1px 0px fade(darken(@background-color, 50), 30);
+  }
+
+  &:hover {
+    background: @background-color-hover;
+    box-shadow: 0 2px 3px fade(@grey-850, 50);
+    border-bottom-color: @border-bottom-color-hover;
+    border-top-color: @background-color-hover;
+    cursor: pointer;
+    text-decoration: none !important; // temp overwriting anchor styling
+  }
+
+  &:focus {
+    outline: 0;
+    text-decoration: none !important; // temp overwriting anchor styling
+  }
+
+  &:active,
+  &.selected,
+  &.is-loading {
+    background: @background-color-active;
+    border-top-color: @border-top-color-active;
+    border-top-width: 2px;
+    border-bottom-color: @background-color;
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &[disabled=disabled] {
+    opacity: 0.4;
+
+    &:hover,
+    &:active {
+      cursor: default;
+      background: @background-color;
+      box-shadow: 0 1px 1px fade(@grey-850, 30);
+    }
+  }
+}
+
+// Creating the various buttons
+
+.button {
+  .button-base(
+          @grey-200, // background color
+          @grey-100, // background color on hover
+          @grey-300, // background color on active
+          @grey-850, // text color
+          @grey-200, // border bottom color off
+          @grey-100, // border bottom color hover
+          @grey-550, // border top color
+          @grey-400 // border top color active
+  );
+}
+
+.shipstation-primary-button {
+  .button-base(
+          @blue-600, // background color
+          @blue-500, // background on hover
+          @blue-700, // background on click
+          @white, // text
+          @blue-700, // border bottom color off
+          @blue-600, // border bottom color hover
+          @blue-700, // border top color
+          @blue-800 // border top color active
+  );
+}
+
+.shipengine-primary-button {
+  .button-base(
+          @purple-600, // background color
+          @purple-500, // background on hover
+          @purple-700, // background on click
+          @white, // text
+          @purple-700, // border bottom color off
+          @purple-600, // border bottom color hover
+          @purple-700, // border top color
+          @purple-800 // border top color active
+  );
+}
+
+.button-create {
+  .button-base(
+          @green-600, // background color
+          @green-500, // background on hover
+          @green-700, // background on click
+          @white, // text
+          @green-700, // border bottom color off
+          @green-600, // border bottom color hover
+          @green-700, // border top color
+          @green-800 // border top colr active
+  );
+}
+
+.button-danger {
+  .button-base(
+          @red-650, // background color
+          @red-500, // background on hover
+          @red-800, // background on click
+          @white, // text
+          @red-800, // border bottom color off
+          @red-650, // border bottom color hover
+          @red-650, // border top color
+          @red-900 // border top color active
+  );
+}
+
+.large-button {
+  height: 40px;
+  line-height: 38px;
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+.is-loading {
+  span {
+    opacity: 0;
+  }
+
+  .loading-indicator {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+  }
+
+  &:hover {
+    cursor: default;
+  }
+}

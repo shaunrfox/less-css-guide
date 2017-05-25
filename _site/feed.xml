@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Front-end Style Guide</title>
-    <description>This site is meant to help us unify our front-end code. These are the documented best-practises for front-end code structure. You can help us maintain this project by submitting your own examples of best practises you come across.
+    <title>Less CSS Guide</title>
+    <description>This site is meant to demonstrate properties of Less and CSS.
 </description>
-    <link>/style-guide/</link>
-    <atom:link href="/style-guide/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Sep 2016 13:55:00 -0500</pubDate>
-    <lastBuildDate>Fri, 09 Sep 2016 13:55:00 -0500</lastBuildDate>
-    <generator>Jekyll v3.1.2</generator>
+    <link>/less-css-guide/</link>
+    <atom:link href="/less-css-guide/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 25 May 2017 10:42:25 -0500</pubDate>
+    <lastBuildDate>Thu, 25 May 2017 10:42:25 -0500</lastBuildDate>
+    <generator>Jekyll v3.0.4</generator>
     
       <item>
         <title>SCSS Primer</title>
         <description>
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/scss/2016/05/20/scss-primer.html</link>
-        <guid isPermaLink="true">/style-guide/css/scss/2016/05/20/scss-primer.html</guid>
+        <link>/less-css-guide/css/scss/2016/05/20/scss-primer.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/scss/2016/05/20/scss-primer.html</guid>
         
         
         <category>CSS</category>
@@ -169,8 +169,8 @@
 &lt;p&gt;We primarily use &lt;code class=&quot;highlighter-rouge&quot;&gt;white-space: nowrap&lt;/code&gt; to force text to be one line, without wrapping. Most often used in conjunction with CSS truncation.&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-text-handling.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-text-handling.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-text-handling.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-text-handling.html</guid>
         
         
         <category>CSS</category>
@@ -356,8 +356,8 @@
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; will select EVERYTHING. We only use it once, to define the box-model. In general, there are not many other reasons to select all and it can become very computationally intensive.&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-selectors.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-selectors.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-selectors.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-selectors.html</guid>
         
         
         <category>CSS</category>
@@ -369,8 +369,8 @@
         <description>&lt;p&gt;:hover, :active, :disabled, :first-child, :last-child, :nth-child&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-pseudo-selectors.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-pseudo-selectors.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-pseudo-selectors.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-pseudo-selectors.html</guid>
         
         
         <category>CSS</category>
@@ -420,8 +420,8 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-pseudo-elements.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-pseudo-elements.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-pseudo-elements.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-pseudo-elements.html</guid>
         
         
         <category>CSS</category>
@@ -433,8 +433,8 @@
         <description>
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-overflow.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-overflow.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-overflow.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-overflow.html</guid>
         
         
         <category>CSS</category>
@@ -446,8 +446,8 @@
         <description>
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-opacity.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-opacity.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-opacity.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-opacity.html</guid>
         
         
         <category>CSS</category>
@@ -540,8 +540,8 @@
 &lt;p&gt;This is primarily used for aligning a collection of elements with &lt;code class=&quot;highlighter-rouge&quot;&gt;display: inline-block;&lt;/code&gt;. You’ll usually set this to &lt;code class=&quot;highlighter-rouge&quot;&gt;top&lt;/code&gt; so that the elements’ tops all line up.&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-layout.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-layout.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-layout.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-layout.html</guid>
         
         
         <category>CSS</category>
@@ -599,8 +599,8 @@
 &lt;p&gt;The easiest way to hide elements on the page.&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-display.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-display.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-display.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-display.html</guid>
         
         
         <category>CSS</category>
@@ -612,8 +612,8 @@
         <description>
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/style-guide/css/2016/05/20/css-cursor.html</link>
-        <guid isPermaLink="true">/style-guide/css/2016/05/20/css-cursor.html</guid>
+        <link>/less-css-guide/css/2016/05/20/css-cursor.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-cursor.html</guid>
         
         
         <category>CSS</category>

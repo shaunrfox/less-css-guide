@@ -1,0 +1,143 @@
+/*
+ * * * * * * * * * * * * * * * * * * *
+ * @mixins
+ * * * * * * * * * * * * * * * * * * *
+ */
+// Getting Source Sans
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+
+.roboto() {
+  font-family: "Roboto", Verdana, Helvetica, Arial, sans-serif;
+}
+
+// Helper to clear inner floats
+.clearfix() {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Vertical align anything
+.vertical-align() {
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+}
+
+// Border Radius, all corners
+.border-radius-all(@cornervalue) {
+  -webkit-border-radius: @cornervalue;
+  -moz-border-radius: @cornervalue;
+  border-radius: @cornervalue;
+}
+
+// Border Radius, any configuration
+.border-radius(@topleft, @topright, @bottomright, @bottomleft) {
+  -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+  -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+  border-radius: @topleft @topright @bottomright @bottomleft;
+}
+
+// Transition mixin
+.transition(@args) {
+  -webkit-transition: @args;
+  -moz-transition: @args;
+  -o-transition: @args;
+  transition: @args;
+}
+
+// Uppercase, 600, letter-spaced
+.uppercase() {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+// Truncate text
+.truncate() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Make those words wrap, yo
+.word-wrap() {
+  -ms-word-break: break-all;
+  word-wrap: hyphenate;
+  word-wrap: break-word;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+// Linear gradient (top to bottom)
+.linear-gradient(@from, @to) {
+  background-color: @to;
+  background-image: -moz-linear-gradient(@from, @to);
+  background-image: -o-linear-gradient(@from, @to);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, @from), color-stop(1, @to));
+  background-image: -webkit-linear-gradient(@from, @to);
+  background-image: -ms-linear-gradient(@from, @to);
+  background-image: linear-gradient(@from, @to);
+}
+
+// Remove browser default list styling (make sure to add your own)
+.unstyled-list() {
+  display: inline-block;
+  list-style: none;
+  list-style-type: none;
+  list-style-position: unset;
+  border-bottom: none;
+  -moz-list-style: none none none;
+  -moz-margin-before: 0;
+  -moz-margin-after: 0;
+  -moz-margin-start: 0;
+  -moz-margin-end: 0;
+  -moz-padding-start: 0;
+  -moz-padding-end: 0;
+  -webkit-list-style: none none none;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// Remove browser default button styling (make sure to add your own)
+.unstyled-button() {
+  border: none;
+  border-image-source: none;
+  border-image-slice: 0;
+  border-image-width: 0;
+  border-image-outset: 0;
+  border-image-repeat: none;
+  padding: 0;
+}
+
+// Prevent User Selection
+.no-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+//styling for element with background cover image
+.background-cover-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

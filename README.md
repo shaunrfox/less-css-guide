@@ -1,14 +1,17 @@
-# Front-end Style Guide
+# Less CSS Guide
 
-This site is meant to help us unify our front-end code. These are the documented best-practices for front-end code structure. You can help us maintain this project by submitting your own examples of best practices you come across.
-
-You can view the docs site at [shaunfox.com/style-guide/](http://shaunfox.com/style-guide/)
+This site is meant to demonstrate properties of Less and CSS.
 
 ---
 
 ## This site is built on [Jekyll](https://jekyllrb.com/), a static site generator.
 
-To run Jekyll locally, navigate to the project's folder and run `jekyll serve`. This will compile your changes and watch for new ones, plus serve your site up at [localhost:4000/style-guide/](http://localhost:4000/style-guide/).
+You may need to install/update: `Ruby`, `bundle`, `less`, `jekyll` 
+
+Once you've cloned the repository, run `bundle install` from the root folder. If you need to update dependencies, this should tell you what to do.
+
+To run Jekyll locally, navigate to the project's folder and run `bundle exec guard`. This will compile your changes and watch for new ones, plus serve your site up at [localhost:4000/less-css-guide/](http://localhost:4000/less-css-guide/).
+
 
 ## How to create a new item in the list
 
