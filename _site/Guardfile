@@ -3,7 +3,7 @@ ignore /_site/
 
 # Run Rake LESS task on a file change
 guard "rake", :task => "compile_less" do
-  watch(%r{^web/less/.+\.less})
+  watch(%r{^_less/.+\.less})
 end
 
 # Only do the jekyll business on windows;

@@ -48,42 +48,7 @@ Use an h3 (`### Example`) to make a header for this section.
 
 ---
 
-## Topics we'd like to cover
-
-### General Concepts
-
-- Naming Conventions
-- caniuse.com
-- kagax ES5 and ES6 tables
-- Git
-- Minimalist Philosophy
-
-### HTML
-
-- ~~Buttons~~
-- ~~Dropdowns~~
-- Inputs (multiple)
-  - ~~Checkboxes~~
-- Modals
-- Buttons vs Anchor tags
-- General HTML
-  - Element Display Behavior
-  - Minimal nesting/wrappers
-- HTML Primer
-  - Make overall primer with table (deep-link into sections) (Element type, Description, Link)
-
-### Javascript
-
-- ES5 Array functions
-- ES6
-- 'this' in Javascript
-- Global Namespace in Javascript
-- Strict Mode
-- jQuery Primer
-- Angular Primer
-- Syntax
-
-### SCSS/CSS
+## Topics to cover
 
 - ~~General CSS education~~
   - Make overall primer with table (deep-link into sections) (Name, Description, Common Values, Link)
@@ -125,7 +90,7 @@ Use an h3 (`### Example`) to make a header for this section.
            - ~~content (and psuedo elements)~~
            - ~~before~~
            - ~~after~~
-      - Psudoselectors
+      - Pseudoselectors
           - hover
           - active
           - disabled

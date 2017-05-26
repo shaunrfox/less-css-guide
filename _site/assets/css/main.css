@@ -900,7 +900,7 @@ pre {
   font-family: Monaco, Andale Mono, Courier New, monospace;
 }
 code {
-  background-color: #fff983;
+  background-color: #fffcbd;
   color: rgba(38, 38, 38, 0.6);
   padding: 3px 5px;
   font-size: .8em;
@@ -972,12 +972,12 @@ li {
   font-size: 18px;
 }
 .table .row > div a {
-  color: #c9e6ff;
+  color: #6fb8f8;
   text-decoration: none;
   white-space: nowrap;
 }
 .table .row > div a:hover {
-  text-decoration: underline;
+  color: #97cfff;
 }
 /*
  * * * * * * * * * * * * * * * * * * *
