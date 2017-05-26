@@ -2014,13 +2014,13 @@
     
       <li data-filter-id="css-text-handling"><a class="page-link" href="#css-text-handling" id="link-css-text-handling">CSS Text Handling</a></li>
     
-      <li data-filter-id="SCSS-color-variables"><a class="page-link" href="#SCSS-color-variables" id="link-SCSS-color-variables">SCSS Color Variables</a></li>
+      <li data-filter-id="Less-color-variables"><a class="page-link" href="#Less-color-variables" id="link-Less-color-variables">Less Color Variables</a></li>
     
-      <li data-filter-id="SCSS-SCSS-mixins"><a class="page-link" href="#SCSS-SCSS-mixins" id="link-SCSS-SCSS-mixins">SCSS Mixins</a></li>
+      <li data-filter-id="Less-mixins"><a class="page-link" href="#Less-mixins" id="link-Less-mixins">Less Mixins</a></li>
     
-      <li data-filter-id="scss-primer"><a class="page-link" href="#scss-primer" id="link-scss-primer">SCSS Primer</a></li>
+      <li data-filter-id="Less-primer"><a class="page-link" href="#Less-primer" id="link-Less-primer">Less Primer</a></li>
     
-      <li data-filter-id="variables-in-scss"><a class="page-link" href="#variables-in-scss" id="link-variables-in-scss">Variables in SCSS</a></li>
+      <li data-filter-id="variables-in-less"><a class="page-link" href="#variables-in-less" id="link-variables-in-less">Variables in Less</a></li>
     
 	</ul>
 </nav>
@@ -2066,16 +2066,16 @@
 
 <p>These properties are used in conjunction with <code class="highlighter-rouge">relative</code>, <code class="highlighter-rouge">absolute</code>, or <code class="highlighter-rouge">fixed</code> positioning.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.parent-element</span> <span class="p">{</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.parent-element {
+  position: relative;
+}
 
-<span class="nc">.child-element</span> <span class="p">{</span>
-	<span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-	<span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-	<span class="nl">left</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-	<span class="c1">// 20px from the top, left corner of it's parent, regardless of padding or other sibling elements.
-</span><span class="p">}</span></code></pre></figure>
+.child-element {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  // 20px from the top, left corner of it's parent, regardless of padding or other sibling elements.
+}</code></pre></figure>
 
 <hr />
 
@@ -2095,7 +2095,7 @@
 
 <h5 id="example-values-left-right-none">EXAMPLE VALUES: <code class="highlighter-rouge">left</code>, <code class="highlighter-rouge">right</code>, <code class="highlighter-rouge">none</code></h5>
 
-<p><code class="highlighter-rouge">float</code> is usually used when you want two or more block elements to be side-by-side. It’s easiest to see in a visual example: <a href="http://codepen.io/bxyoung89/pen/WbLRve">http://codepen.io/bxyoung89/pen/WbLRve</a></p>
+<p><code class="highlighter-rouge">float</code> is usually used when you want two or more block elements to be side-by-side. It’s easiest to see in a visual example: <a href="https://codepen.io/bxyoung89/full/WbLRve/">https://codepen.io/bxyoung89/full/WbLRve/</a></p>
 
 <h3 id="clear">clear</h3>
 
@@ -2111,7 +2111,7 @@
 
 <p>You can do a lot of things with transform, but usually we only use it for vertical centering. You should be careful with this property because it does not necessarily respect round pixel values and can cause things to become blurry.</p>
 
-<p>Our mixin: <code class="highlighter-rouge">@include vertical-align();</code> will vertically center a block element with unknown height inside a parent that’s larger (most of the time). (not to be confused with the <code class="highlighter-rouge">vertical-align</code> property)</p>
+<p>Our mixin: <code class="highlighter-rouge">.vertical-align();</code> will vertically center a block element with unknown height inside a parent that’s larger (most of the time). (not to be confused with the <code class="highlighter-rouge">vertical-align</code> property)</p>
 
 <p>More info here: <a href="https://css-tricks.com/centering-css-complete-guide/">https://css-tricks.com/centering-css-complete-guide/</a></p>
 

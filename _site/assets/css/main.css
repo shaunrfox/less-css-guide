@@ -693,7 +693,7 @@ table {
   box-sizing: border-box;
 }
 html {
-  font-family: "Roboto", Verdana, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Arial Narrow, Geneva, Lucida Grande, Helvetica, sans-serif;
   font-size: 62.5%;
   color: #4c4c4c;
   width: 100%;
@@ -773,8 +773,8 @@ p a:hover,
 blockquote {
   font-style: italic;
   margin: 0 0 25px 0;
-  border-left: 1px solid #e0e0e0;
-  background: #c9e6ff;
+  border-left: 3px solid #d8e2e7;
+  background: #eef8fd;
   padding: 15px;
 }
 blockquote p {
@@ -900,7 +900,7 @@ pre {
   font-family: Monaco, Andale Mono, Courier New, monospace;
 }
 code {
-  background-color: #fffcbd;
+  background-color: rgba(255, 244, 29, 0.2);
   color: rgba(38, 38, 38, 0.6);
   padding: 3px 5px;
   font-size: .8em;
@@ -1090,7 +1090,7 @@ nav ul li a:active,
 nav ul li a:hover {
   opacity: 1;
   color: #000000;
-  background: #f6f6f6;
+  background: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   padding-left: 20px;
 }

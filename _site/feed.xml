@@ -6,24 +6,9 @@
 </description>
     <link>/less-css-guide/</link>
     <atom:link href="/less-css-guide/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 May 2017 08:31:04 -0500</pubDate>
-    <lastBuildDate>Fri, 26 May 2017 08:31:04 -0500</lastBuildDate>
+    <pubDate>Fri, 26 May 2017 10:51:55 -0500</pubDate>
+    <lastBuildDate>Fri, 26 May 2017 10:51:55 -0500</lastBuildDate>
     <generator>Jekyll v3.0.4</generator>
-    
-      <item>
-        <title>SCSS Primer</title>
-        <description>
-</description>
-        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
-        <link>/less-css-guide/css/scss/2016/05/20/scss-primer.html</link>
-        <guid isPermaLink="true">/less-css-guide/css/scss/2016/05/20/scss-primer.html</guid>
-        
-        
-        <category>CSS</category>
-        
-        <category>SCSS</category>
-        
-      </item>
     
       <item>
         <title>CSS Text Handling</title>
@@ -31,52 +16,33 @@
 
 &lt;h5 id=&quot;example-values-depends-on-your-project&quot;&gt;EXAMPLE VALUES: Depends on your project.&lt;/h5&gt;
 
-&lt;p&gt;To set what font gets used, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;font-family&lt;/code&gt; property. In most of our projects this is done for you in our base css.&lt;/p&gt;
+&lt;p&gt;To set what font gets used, use the &lt;code class=&quot;highlighter-rouge&quot;&gt;font-family&lt;/code&gt; property. This is set globally for our products.&lt;/p&gt;
 
-&lt;p&gt;However, if you want to change what font is used, you should have numerous fallbacks like.&lt;/p&gt;
+&lt;p&gt;However, if you want to change what font is used, you should have numerous fallbacks like this:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Source Sans Pro&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Verdana&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Helvetica&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Roboto&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arial&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Narrow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Geneva&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Lucida&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Grande&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Helvetica&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;In this example Verdana will be used if the broswer does not have access to “Source Sans Pro”, then Helvetica, etc…&lt;/p&gt;
-
-&lt;p&gt;If you want to have them download a font, you’ll want to use &lt;code class=&quot;highlighter-rouge&quot;&gt;@font-face&lt;/code&gt;. Here’s a helpful resource &lt;strong&gt;TODO PROVIDE RESOURCE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In this example Arial Narrow will be used if the browser does not have access to “Roboto”, then Geneva, etc…&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;font-size&quot;&gt;font-size&lt;/h2&gt;
 
-&lt;h5 id=&quot;example-values-12px-12rem-14rem-16rem&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;12px&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;1.2rem&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;1.4rem&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;1.6rem&lt;/code&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;example-values-12px&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;12px&lt;/code&gt;&lt;/h5&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt; controls how big the words will appear.&lt;/p&gt;
-
-&lt;p&gt;There are several units you can use, but we recommend pixels (&lt;code class=&quot;highlighter-rouge&quot;&gt;px&lt;/code&gt;) and root ems (&lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt;). Root ems are a percentage of the font size set on the html element.&lt;/p&gt;
-
-&lt;p&gt;As part of our code, we have a mixin that you should use in most cases. It will take care of both rems and a pixel fallback.&lt;/p&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;usage&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;outputs&quot;&gt;outputs&lt;/h3&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.my-class&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;16px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;.6rem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt; controls the size the text will rendered at. We stick to &lt;code class=&quot;highlighter-rouge&quot;&gt;px&lt;/code&gt; as our decided unit.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;color&quot;&gt;color&lt;/h2&gt;
 
-&lt;h5 id=&quot;example-values-off-black-ffffff-tintmid-grey-07-red-rgba255-255-255-05&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;$off-black&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;#ffffff&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;tint($mid-grey, 0.7)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$red&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rgba(255, 255, 255, 0.5)&lt;/code&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;example-values-grey-1000-ffffff-red-300-fadewhite-50&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;@grey-1000&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;#ffffff&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;@red-300&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;fade(@white, 50)&lt;/code&gt;&lt;/h5&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;color&lt;/code&gt; changes the color of the text.&lt;/p&gt;
 
-&lt;p&gt;In our code, we have variables corresponding to color values. &lt;a href=&quot;#scss-color-variables&quot;&gt;SCSS Color Variables&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In our code, we have variables corresponding to color values. &lt;a href=&quot;#Less-color-variables&quot;&gt;Less Color Variables&lt;/a&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -88,10 +54,10 @@
 
 &lt;p&gt;For buttons, we commonly set the line-height to the height of the button to center the text vertically within the button.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.button&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;line-height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;.button {
+  height: 30px;
+  line-height: 30px;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -105,9 +71,15 @@
 
 &lt;h2 id=&quot;font-weight&quot;&gt;font-weight&lt;/h2&gt;
 
-&lt;h5 id=&quot;example-values-normal400-semibold600-bold700&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;normal&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;400&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;semibold&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;600&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;bold&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;700&lt;/code&gt;&lt;/h5&gt;
+&lt;h5 id=&quot;example-values-normal400-semi-bold600-bold700&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;@normal&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;400&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;@semi-bold&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;600&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;@bold&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;700&lt;/code&gt;&lt;/h5&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;font-weight&lt;/code&gt; tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These three are the most common values we use with Source Sans Pro.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;font-weight&lt;/code&gt; tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These are the only weights we support.&lt;/p&gt;
+
+&lt;p&gt;We’ve defined variables to make this easier:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;@normal: 400;
+@semi-bold: 600;
+@bold: 700;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -129,11 +101,11 @@
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Shaun Fox&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;text-transform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;uppercase&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;font-weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;letter-spacing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;.name {
+  text-transform: uppercase;
+  font-weight: @semi-bold;
+  letter-spacing: 1px;
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -151,14 +123,14 @@
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration&lt;/code&gt; is most often used to override the default browser styling of anchor tags. Frequently we’ll set the anchor to &lt;code class=&quot;highlighter-rouge&quot;&gt;text-decoration: none&lt;/code&gt;, which removes the underline, but we’ll give it other attributes that help define it as a link. For example:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.link&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;text-decoration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;none&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;.link {
+  text-decoration: none;
+  color: $blue;
 
-  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:hover&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  	&lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &amp;amp;:hover {
+  	border-bottom: 1px solid $blue;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -257,23 +229,23 @@
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;scss&quot;&gt;SCSS&lt;/h2&gt;
+&lt;h2 id=&quot;less&quot;&gt;Less&lt;/h2&gt;
 
-&lt;p&gt;This section will cover selectors in SCSS. To read more about SCSS in gerneral, see the &lt;a href=&quot;#scss-primer&quot;&gt;SCSS Primer&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This section will cover selectors in Less. To read more about Less in general, see the &lt;a href=&quot;#Less-primer&quot;&gt;Less Primer&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;nesting&quot;&gt;nesting&lt;/h3&gt;
 
-&lt;p&gt;In SCSS, you can nest selectors to logically scope rules, but this should be used cautiosly to avoid making too many overly-specific selectors when they’re compiled.&lt;/p&gt;
+&lt;p&gt;In Less, you can nest selectors to logically scope rules, but this should be used cautiously to avoid making too many overly-specific selectors when they’re compiled.&lt;/p&gt;
 
 &lt;h5 id=&quot;nesting-example&quot;&gt;Nesting Example:&lt;/h5&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;.box {
+  background: red;
 
-  &lt;span class=&quot;nc&quot;&gt;.header&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  .header {
+    background: blue;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h5 id=&quot;compiled&quot;&gt;Compiled:&lt;/h5&gt;
 
@@ -291,13 +263,13 @@
 
 &lt;h5 id=&quot;ampersand-example&quot;&gt;Ampersand Example:&lt;/h5&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;.box {
+  background: red;
 
-  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.blue&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;blue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &amp;amp;.blue {
+    background: blue;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;h5 id=&quot;compiled-1&quot;&gt;Compiled:&lt;/h5&gt;
 
@@ -313,27 +285,27 @@
 
 &lt;h2 id=&quot;browser-prefixes&quot;&gt;browser prefixes&lt;/h2&gt;
 
-&lt;p&gt;Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implememnted before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: &lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-ms&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-moz&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-o&lt;/code&gt;. This can be a hge hastle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.&lt;/p&gt;
+&lt;p&gt;Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implemented before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: &lt;code class=&quot;highlighter-rouge&quot;&gt;-webkit&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-ms&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-moz&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-o&lt;/code&gt;. This can be a huge hassle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;h2 id=&quot;media-queries&quot;&gt;@media Queries&lt;/h2&gt;
 
-&lt;p&gt;In the new era of Responsive Web Design, things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.&lt;/p&gt;
+&lt;p&gt;In the new era of &lt;a href=&quot;https://alistapart.com/article/responsive-web-design&quot;&gt;Responsive Web Design&lt;/a&gt;, things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.&lt;/p&gt;
 
 &lt;h5 id=&quot;example-1&quot;&gt;Example:&lt;/h5&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// in a grid, two across
-&lt;/span&gt;  &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inline-block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;.box {
+  // in a grid, two across
+  display: inline-block;
+  width: 50%;
 
-  &lt;span class=&quot;k&quot;&gt;@media&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;max-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;600px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// at 600px or less, it becomes a list
-&lt;/span&gt;    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  @media (max-width: 600px) {
+    // at 600px or less, it becomes a list
+    display: block;
+    width: 100%;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -341,11 +313,11 @@
 
 &lt;h3 id=&quot;selecting-ids&quot;&gt;Selecting IDs&lt;/h3&gt;
 
-&lt;p&gt;IDs, when used properly, are unique and only used once. Targetting IDs, therefore, is inefficient and does not promote DRY code.&lt;/p&gt;
+&lt;p&gt;IDs, when used properly, are unique and only used once. Targeting IDs, therefore, is inefficient and does not promote DRY code.&lt;/p&gt;
 
-&lt;h3 id=&quot;lots-of-nesting-in-scss&quot;&gt;Lots of nesting in SCSS&lt;/h3&gt;
+&lt;h3 id=&quot;lots-of-nesting-in-less&quot;&gt;Lots of nesting in Less&lt;/h3&gt;
 
-&lt;p&gt;Too much nesting in SCSS creates overly specific selectors, leading to poor performance and not reusable code.&lt;/p&gt;
+&lt;p&gt;Too much nesting in Less creates overly specific selectors, leading to poor performance and not reusable code.&lt;/p&gt;
 
 &lt;h3 id=&quot;important&quot;&gt;!important&lt;/h3&gt;
 
@@ -353,7 +325,7 @@
 
 &lt;h3 id=&quot;selecting-&quot;&gt;Selecting &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/h3&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; will select EVERYTHING. We only use it once, to define the box-model. In general, there are not many other reasons to select all and it can become very computationally intensive.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; will select EVERYTHING. We use it for very specific applications because it’s so darned powerful. In general, there are not many reasons to select all and it can become very computationally intensive.&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
         <link>/less-css-guide/css/2016/05/20/css-selectors.html</link>
@@ -367,6 +339,8 @@
       <item>
         <title>CSS Pseudo Selectors</title>
         <description>&lt;p&gt;:hover, :active, :disabled, :first-child, :last-child, :nth-child&lt;/p&gt;
+
+&lt;p&gt;Coming soon…&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
         <link>/less-css-guide/css/2016/05/20/css-pseudo-selectors.html</link>
@@ -390,34 +364,34 @@
 
 &lt;p&gt;This is used to make a small arrow that points to another element. We typically use this for special tooltips or dropdowns. You can see this more easily in the &lt;a href=&quot;http://codepen.io/shaunrfox/pen/mENJjv?editors=1100&quot;&gt;Codepen Example&lt;/a&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.parent-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;c1&quot;&gt;// Must set position for the carrot to work
-&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:before&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// IMPORTANT: pseudo elements will not display at all unless the content attribute is set. If you don&#39;t want any text, use the empty string.
-&lt;/span&gt;    &lt;span class=&quot;nl&quot;&gt;display&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;.parent-element {
+  position: relative;
+  // Must set position for the carrot to work
 
-  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:before&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-12px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-12px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$light-grey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;12px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &amp;amp;:before,
+  &amp;amp;:after {
+    content: &#39;&#39;; // IMPORTANT: pseudo elements will not display at all unless the content attribute is set. If you don&#39;t want any text, use the empty string.
+    display: block;
+    position: absolute;
+    left: 50%;
+  }
 
-  &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;:after&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-10px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;transparent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &amp;amp;:before {
+    top: -12px;
+    margin-left: -12px;
+    border-bottom: 12px solid $light-grey;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+  }
+
+  &amp;amp;:after {
+    top: -10px;
+    margin-left: -10px;
+    border-bottom: 10px solid $white;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+  }
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
         <link>/less-css-guide/css/2016/05/20/css-pseudo-elements.html</link>
@@ -430,7 +404,7 @@
     
       <item>
         <title>CSS Overflow</title>
-        <description>
+        <description>&lt;p&gt;Coming soon…&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
         <link>/less-css-guide/css/2016/05/20/css-overflow.html</link>
@@ -443,7 +417,7 @@
     
       <item>
         <title>CSS Opacity</title>
-        <description>
+        <description>&lt;p&gt;Coming soon…&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
         <link>/less-css-guide/css/2016/05/20/css-opacity.html</link>
@@ -484,16 +458,16 @@
 
 &lt;p&gt;These properties are used in conjunction with &lt;code class=&quot;highlighter-rouge&quot;&gt;relative&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;absolute&lt;/code&gt;, or &lt;code class=&quot;highlighter-rouge&quot;&gt;fixed&lt;/code&gt; positioning.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.parent-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-less&quot; data-lang=&quot;less&quot;&gt;.parent-element {
+  position: relative;
+}
 
-&lt;span class=&quot;nc&quot;&gt;.child-element&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;c1&quot;&gt;// 20px from the top, left corner of it&#39;s parent, regardless of padding or other sibling elements.
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+.child-element {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  // 20px from the top, left corner of it&#39;s parent, regardless of padding or other sibling elements.
+}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;hr /&gt;
 
@@ -513,7 +487,7 @@
 
 &lt;h5 id=&quot;example-values-left-right-none&quot;&gt;EXAMPLE VALUES: &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;right&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;none&lt;/code&gt;&lt;/h5&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; is usually used when you want two or more block elements to be side-by-side. It’s easiest to see in a visual example: &lt;a href=&quot;http://codepen.io/bxyoung89/pen/WbLRve&quot;&gt;http://codepen.io/bxyoung89/pen/WbLRve&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; is usually used when you want two or more block elements to be side-by-side. It’s easiest to see in a visual example: &lt;a href=&quot;https://codepen.io/bxyoung89/full/WbLRve/&quot;&gt;https://codepen.io/bxyoung89/full/WbLRve/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;clear&quot;&gt;clear&lt;/h3&gt;
 
@@ -529,7 +503,7 @@
 
 &lt;p&gt;You can do a lot of things with transform, but usually we only use it for vertical centering. You should be careful with this property because it does not necessarily respect round pixel values and can cause things to become blurry.&lt;/p&gt;
 
-&lt;p&gt;Our mixin: &lt;code class=&quot;highlighter-rouge&quot;&gt;@include vertical-align();&lt;/code&gt; will vertically center a block element with unknown height inside a parent that’s larger (most of the time). (not to be confused with the &lt;code class=&quot;highlighter-rouge&quot;&gt;vertical-align&lt;/code&gt; property)&lt;/p&gt;
+&lt;p&gt;Our mixin: &lt;code class=&quot;highlighter-rouge&quot;&gt;.vertical-align();&lt;/code&gt; will vertically center a block element with unknown height inside a parent that’s larger (most of the time). (not to be confused with the &lt;code class=&quot;highlighter-rouge&quot;&gt;vertical-align&lt;/code&gt; property)&lt;/p&gt;
 
 &lt;p&gt;More info here: &lt;a href=&quot;https://css-tricks.com/centering-css-complete-guide/&quot;&gt;https://css-tricks.com/centering-css-complete-guide/&lt;/a&gt;&lt;/p&gt;
 
@@ -609,11 +583,24 @@
     
       <item>
         <title>CSS Cursor</title>
-        <description>
+        <description>&lt;p&gt;Coming soon…&lt;/p&gt;
 </description>
         <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
         <link>/less-css-guide/css/2016/05/20/css-cursor.html</link>
         <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-cursor.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
+    
+      <item>
+        <title>CSS Box-Shadow</title>
+        <description>&lt;p&gt;Coming soon…&lt;/p&gt;
+</description>
+        <pubDate>Fri, 20 May 2016 00:00:00 -0500</pubDate>
+        <link>/less-css-guide/css/2016/05/20/css-box-shadow.html</link>
+        <guid isPermaLink="true">/less-css-guide/css/2016/05/20/css-box-shadow.html</guid>
         
         
         <category>CSS</category>

@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>SCSS Mixins</title>
-  <meta name="description" content="Mixins are chunks of commonly used code that can be included again and again throughout your SCSS. Mixins can also take a variable when they’re called.">
+  <title>Variables in Less</title>
+  <meta name="description" content="SCSS (or Sass) variables can be used for any kind of simple stored value. We most commonly use them for colors, but they can be used for lots of things.">
 
   <link rel="icon" href="/less-css-guide/assets/img/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="/less-css-guide/assets/img/favicon.ico" type="image/x-icon" />
@@ -15,7 +15,7 @@
   <script src="/less-css-guide/assets/js/jquery-2.0.3.min.js"></script>
 
   <link rel="stylesheet" href="/less-css-guide/assets/css/main.css">
-  <link rel="canonical" href="/less-css-guide/css/scss/2016/05/13/SCSS-SCSS-mixins.html">
+  <link rel="canonical" href="/less-css-guide/css/less/2016/05/10/variables-in-less.html">
   <link rel="alternate" type="application/rss+xml" title="Less CSS Guide" href="/less-css-guide/feed.xml">
 </head>
 
@@ -2014,13 +2014,13 @@
     
       <li data-filter-id="css-text-handling"><a class="page-link" href="#css-text-handling" id="link-css-text-handling">CSS Text Handling</a></li>
     
-      <li data-filter-id="SCSS-color-variables"><a class="page-link" href="#SCSS-color-variables" id="link-SCSS-color-variables">SCSS Color Variables</a></li>
+      <li data-filter-id="Less-color-variables"><a class="page-link" href="#Less-color-variables" id="link-Less-color-variables">Less Color Variables</a></li>
     
-      <li data-filter-id="SCSS-SCSS-mixins"><a class="page-link" href="#SCSS-SCSS-mixins" id="link-SCSS-SCSS-mixins">SCSS Mixins</a></li>
+      <li data-filter-id="Less-mixins"><a class="page-link" href="#Less-mixins" id="link-Less-mixins">Less Mixins</a></li>
     
-      <li data-filter-id="scss-primer"><a class="page-link" href="#scss-primer" id="link-scss-primer">SCSS Primer</a></li>
+      <li data-filter-id="Less-primer"><a class="page-link" href="#Less-primer" id="link-Less-primer">Less Primer</a></li>
     
-      <li data-filter-id="variables-in-scss"><a class="page-link" href="#variables-in-scss" id="link-variables-in-scss">Variables in SCSS</a></li>
+      <li data-filter-id="variables-in-less"><a class="page-link" href="#variables-in-less" id="link-variables-in-less">Variables in Less</a></li>
     
 	</ul>
 </nav>
@@ -2038,74 +2038,32 @@
 	</header>
 
 	<div class="post-content">
-		<p>Mixins are chunks of commonly used code that can be included again and again throughout your SCSS. Mixins can also take a variable when they’re called.</p>
+		<p>SCSS (or Sass) variables can be used for any kind of simple stored value. We most commonly use them for colors, but they can be used for lots of things.</p>
 
-<p>This snippet is used on parent elements with floating child elements to force them to wrap around their children.</p>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">@blue-500: #6FB8F8;
+@green-600: #6BA03A;
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">clearfix</span> <span class="p">{</span>
-  <span class="err">&amp;</span><span class="p">:</span><span class="o">:</span><span class="n">after</span> <span class="p">{</span>
-    <span class="nl">content</span><span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
-    <span class="nl">display</span><span class="p">:</span> <span class="n">table</span><span class="p">;</span>
-    <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+@filter-buttons-height: 40px;
 
-<p>This snippet is used to generate REM-based font sizes with a PX backup. Note that it takes a variable ($size) and does some math with the value it’s given.</p>
+@global-padding: 2%;</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">font-size</span><span class="p">(</span><span class="nv">$size</span><span class="p">){</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="p">(</span><span class="nv">$size</span> <span class="o">*</span> <span class="m">10</span><span class="p">)</span> <span class="o">+</span> <span class="nb">px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="nv">$size</span> <span class="o">+</span> <span class="n">rem</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>More snippets that are used extensively:</p>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Uppercase, 600, letter-spaced
-</span><span class="k">@mixin</span> <span class="nf">uppercase</span> <span class="p">{</span>
-  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
-  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Truncate text
-</span><span class="k">@mixin</span> <span class="nf">truncate</span> <span class="p">{</span>
-  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
-  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
-  <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Vertical align anything
-</span><span class="k">@mixin</span> <span class="nf">vertical-align</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-  <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">);</span>
-  <span class="nl">transform-style</span><span class="p">:</span> <span class="n">perserve-3d</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<hr />
 
 <h3 id="usage">Usage</h3>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="k">@include</span> <span class="nd">vertical-align</span><span class="p">();</span>
-  <span class="k">@include</span> <span class="nd">uppercase</span><span class="p">();</span>
-  <span class="k">@include</span> <span class="nd">font-size</span><span class="p">(</span><span class="m">1</span><span class="mi">.8</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.button {
+  background: @blue-500;
+  height: @filter-buttons-height;
+  padding: 0 @global-padding;
+}</code></pre></figure>
 
-<h3 id="outputs-to">Outputs to:</h3>
+<p>This compiles to:</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-  <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">);</span>
-  <span class="nl">transform-style</span><span class="p">:</span> <span class="n">perserve-3d</span><span class="p">;</span>
-
-  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
-  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
-
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="mi">.8rem</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.button {
+  background: #6FB8F8;
+  height: 40px;
+  padding: 0 2%;
+}</code></pre></figure>
 
 	</div>
 

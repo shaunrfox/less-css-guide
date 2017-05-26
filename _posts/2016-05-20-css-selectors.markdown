@@ -87,17 +87,17 @@ This rule is similar to `selector selector`, except it only selects the direct d
 
 ---
 
-## SCSS
+## Less
 
-This section will cover selectors in SCSS. To read more about SCSS in gerneral, see the [SCSS Primer](#scss-primer).
+This section will cover selectors in Less. To read more about Less in general, see the [Less Primer](#Less-primer).
 
 ### nesting
 
-In SCSS, you can nest selectors to logically scope rules, but this should be used cautiosly to avoid making too many overly-specific selectors when they're compiled.
+In Less, you can nest selectors to logically scope rules, but this should be used cautiously to avoid making too many overly-specific selectors when they're compiled.
 
 ##### Nesting Example:
 
-{% highlight scss %}
+{% highlight less %}
 .box {
   background: red;
 
@@ -125,7 +125,7 @@ As you can see from the previous example, nesting introduces a space between the
 
 ##### Ampersand Example:
 
-{% highlight scss %}
+{% highlight less %}
 .box {
   background: red;
 
@@ -151,17 +151,17 @@ As you can see from the previous example, nesting introduces a space between the
 
 ## browser prefixes
 
-Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implememnted before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: `-webkit`, `-ms`, `-moz`, `-o`. This can be a hge hastle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.
+Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implemented before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: `-webkit`, `-ms`, `-moz`, `-o`. This can be a huge hassle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.
 
 ---
 
 ## @media Queries
 
-In the new era of Responsive Web Design, things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.
+In the new era of [Responsive Web Design](https://alistapart.com/article/responsive-web-design), things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.
 
 ##### Example:
 
-{% highlight scss %}
+{% highlight less %}
 .box {
   // in a grid, two across
   display: inline-block;
@@ -181,11 +181,11 @@ In the new era of Responsive Web Design, things on the web should be built to wo
 
 ### Selecting IDs
 
-IDs, when used properly, are unique and only used once. Targetting IDs, therefore, is inefficient and does not promote DRY code.
+IDs, when used properly, are unique and only used once. Targeting IDs, therefore, is inefficient and does not promote DRY code.
 
-### Lots of nesting in SCSS
+### Lots of nesting in Less
 
-Too much nesting in SCSS creates overly specific selectors, leading to poor performance and not reusable code.
+Too much nesting in Less creates overly specific selectors, leading to poor performance and not reusable code.
 
 ### !important
 
@@ -193,4 +193,4 @@ When CSS gets overly specific, it may be tempting to use `!important` to get ove
 
 ### Selecting `*`
 
-`*` will select EVERYTHING. We only use it once, to define the box-model. In general, there are not many other reasons to select all and it can become very computationally intensive.
+`*` will select EVERYTHING. We use it for very specific applications because it's so darned powerful. In general, there are not many reasons to select all and it can become very computationally intensive.

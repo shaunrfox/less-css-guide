@@ -1,20 +1,20 @@
 ---
 layout: post
-title:  "Variables in SCSS"
+title:  "Variables in Less"
 date:   2016-05-10
-categories: CSS SCSS
+categories: CSS Less
 ---
 
 SCSS (or Sass) variables can be used for any kind of simple stored value. We most commonly use them for colors, but they can be used for lots of things.
 
-{% highlight scss %}
+{% highlight less %}
 
-$snap-blue: #00a9ed;
-$orange: #fe5019;
+@blue-500: #6FB8F8;
+@green-600: #6BA03A;
 
-$filter-buttons-height: 40px;
+@filter-buttons-height: 40px;
 
-$global-padding: 2%;
+@global-padding: 2%;
 
 {% endhighlight %}
 
@@ -22,22 +22,22 @@ $global-padding: 2%;
 
 ### Usage
 
-{% highlight scss %}
+{% highlight less %}
 
 .button {
-  background: $snap-blue;
-  height: $filter-buttons-height;
-  padding: 0 $global-padding;
+  background: @blue-500;
+  height: @filter-buttons-height;
+  padding: 0 @global-padding;
 }
 
 {% endhighlight %}
 
 This compiles to:
 
-{% highlight scss %}
+{% highlight less %}
 
 .button {
-  background: #00a9ed;
+  background: #6FB8F8;
   height: 40px;
   padding: 0 2%;
 }

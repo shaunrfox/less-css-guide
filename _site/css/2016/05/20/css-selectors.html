@@ -2014,13 +2014,13 @@
     
       <li data-filter-id="css-text-handling"><a class="page-link" href="#css-text-handling" id="link-css-text-handling">CSS Text Handling</a></li>
     
-      <li data-filter-id="SCSS-color-variables"><a class="page-link" href="#SCSS-color-variables" id="link-SCSS-color-variables">SCSS Color Variables</a></li>
+      <li data-filter-id="Less-color-variables"><a class="page-link" href="#Less-color-variables" id="link-Less-color-variables">Less Color Variables</a></li>
     
-      <li data-filter-id="SCSS-SCSS-mixins"><a class="page-link" href="#SCSS-SCSS-mixins" id="link-SCSS-SCSS-mixins">SCSS Mixins</a></li>
+      <li data-filter-id="Less-mixins"><a class="page-link" href="#Less-mixins" id="link-Less-mixins">Less Mixins</a></li>
     
-      <li data-filter-id="scss-primer"><a class="page-link" href="#scss-primer" id="link-scss-primer">SCSS Primer</a></li>
+      <li data-filter-id="Less-primer"><a class="page-link" href="#Less-primer" id="link-Less-primer">Less Primer</a></li>
     
-      <li data-filter-id="variables-in-scss"><a class="page-link" href="#variables-in-scss" id="link-variables-in-scss">Variables in SCSS</a></li>
+      <li data-filter-id="variables-in-less"><a class="page-link" href="#variables-in-less" id="link-variables-in-less">Variables in Less</a></li>
     
 	</ul>
 </nav>
@@ -2116,23 +2116,23 @@
 
 <hr />
 
-<h2 id="scss">SCSS</h2>
+<h2 id="less">Less</h2>
 
-<p>This section will cover selectors in SCSS. To read more about SCSS in gerneral, see the <a href="#scss-primer">SCSS Primer</a>.</p>
+<p>This section will cover selectors in Less. To read more about Less in general, see the <a href="#Less-primer">Less Primer</a>.</p>
 
 <h3 id="nesting">nesting</h3>
 
-<p>In SCSS, you can nest selectors to logically scope rules, but this should be used cautiosly to avoid making too many overly-specific selectors when they’re compiled.</p>
+<p>In Less, you can nest selectors to logically scope rules, but this should be used cautiously to avoid making too many overly-specific selectors when they’re compiled.</p>
 
 <h5 id="nesting-example">Nesting Example:</h5>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  background: red;
 
-  <span class="nc">.header</span> <span class="p">{</span>
-    <span class="nl">background</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  .header {
+    background: blue;
+  }
+}</code></pre></figure>
 
 <h5 id="compiled">Compiled:</h5>
 
@@ -2150,13 +2150,13 @@
 
 <h5 id="ampersand-example">Ampersand Example:</h5>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  background: red;
 
-  <span class="k">&amp;</span><span class="nc">.blue</span> <span class="p">{</span>
-    <span class="nl">background</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  &amp;.blue {
+    background: blue;
+  }
+}</code></pre></figure>
 
 <h5 id="compiled-1">Compiled:</h5>
 
@@ -2172,27 +2172,27 @@
 
 <h2 id="browser-prefixes">browser prefixes</h2>
 
-<p>Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implememnted before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: <code class="highlighter-rouge">-webkit</code>, <code class="highlighter-rouge">-ms</code>, <code class="highlighter-rouge">-moz</code>, <code class="highlighter-rouge">-o</code>. This can be a hge hastle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.</p>
+<p>Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implemented before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: <code class="highlighter-rouge">-webkit</code>, <code class="highlighter-rouge">-ms</code>, <code class="highlighter-rouge">-moz</code>, <code class="highlighter-rouge">-o</code>. This can be a huge hassle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.</p>
 
 <hr />
 
 <h2 id="media-queries">@media Queries</h2>
 
-<p>In the new era of Responsive Web Design, things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.</p>
+<p>In the new era of <a href="https://alistapart.com/article/responsive-web-design">Responsive Web Design</a>, things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.</p>
 
 <h5 id="example-1">Example:</h5>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="c1">// in a grid, two across
-</span>  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  // in a grid, two across
+  display: inline-block;
+  width: 50%;
 
-  <span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="o">:</span> <span class="m">600px</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// at 600px or less, it becomes a list
-</span>    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  @media (max-width: 600px) {
+    // at 600px or less, it becomes a list
+    display: block;
+    width: 100%;
+  }
+}</code></pre></figure>
 
 <hr />
 
@@ -2200,11 +2200,11 @@
 
 <h3 id="selecting-ids">Selecting IDs</h3>
 
-<p>IDs, when used properly, are unique and only used once. Targetting IDs, therefore, is inefficient and does not promote DRY code.</p>
+<p>IDs, when used properly, are unique and only used once. Targeting IDs, therefore, is inefficient and does not promote DRY code.</p>
 
-<h3 id="lots-of-nesting-in-scss">Lots of nesting in SCSS</h3>
+<h3 id="lots-of-nesting-in-less">Lots of nesting in Less</h3>
 
-<p>Too much nesting in SCSS creates overly specific selectors, leading to poor performance and not reusable code.</p>
+<p>Too much nesting in Less creates overly specific selectors, leading to poor performance and not reusable code.</p>
 
 <h3 id="important">!important</h3>
 
@@ -2212,7 +2212,7 @@
 
 <h3 id="selecting-">Selecting <code class="highlighter-rouge">*</code></h3>
 
-<p><code class="highlighter-rouge">*</code> will select EVERYTHING. We only use it once, to define the box-model. In general, there are not many other reasons to select all and it can become very computationally intensive.</p>
+<p><code class="highlighter-rouge">*</code> will select EVERYTHING. We use it for very specific applications because it’s so darned powerful. In general, there are not many reasons to select all and it can become very computationally intensive.</p>
 
 	</div>
 

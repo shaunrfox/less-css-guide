@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CSS Background</title>
-  <meta name="description" content="background, background-color, background-image, background-position, background-repeat, background-size">
+  <title>Less Color Variables</title>
+  <meta name="description" content="Our color variables, defined in _colors.less, are designed to help us reuse colors without having to remember hex values.">
 
   <link rel="icon" href="/less-css-guide/assets/img/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="/less-css-guide/assets/img/favicon.ico" type="image/x-icon" />
@@ -15,7 +15,7 @@
   <script src="/less-css-guide/assets/js/jquery-2.0.3.min.js"></script>
 
   <link rel="stylesheet" href="/less-css-guide/assets/css/main.css">
-  <link rel="canonical" href="/less-css-guide/css/2016/05/20/css-background.html">
+  <link rel="canonical" href="/less-css-guide/css/scss/2016/05/13/Less-color-variables.html">
   <link rel="alternate" type="application/rss+xml" title="Less CSS Guide" href="/less-css-guide/feed.xml">
 </head>
 
@@ -2038,57 +2038,41 @@
 	</header>
 
 	<div class="post-content">
-		<h5 id="background-background-color-background-image-background-position-background-repeat-background-size">background, background-color, background-image, background-position, background-repeat, background-size</h5>
+		<p>Our color variables, defined in <code class="highlighter-rouge">_colors.less</code>, are designed to help us reuse colors without having to remember hex values.</p>
 
-<p><code class="highlighter-rouge">background</code> is one of the most common properties we set. It can be used shorthand or broken out into more specific properties.</p>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">/* This is an example of some of our default colors. */
+@cool-grey-300: #D8E2E7;
+@green-400: #97E34F;
+@olive-700: #68721F;
+@red-200: #FFE9E3;
 
-<h2 id="set-a-background-color">Set a background color</h2>
+/* We also have some specific Carrier colors defined. */
+@fedexCA: #9f4a8a;
+@CAPost: #4a9f96;
+@dhlExpress: #9f724a;</code></pre></figure>
 
-<p>When setting a background color, you can use either <code class="highlighter-rouge">background: @grey-100;</code> or <code class="highlighter-rouge">background-color: @grey-100;</code>.</p>
+<p>There are also a few built-in functions we can use to transform colors to other colors in Less. We try to avoid transforming the colors, except for using <code class="highlighter-rouge">fade()</code> to give them some transparency.</p>
 
-<hr />
+<figure class="highlight"><pre><code class="language-less" data-lang="less">// Slightly darken a color
+darken()
 
-<h2 id="set-a-background-image">Set a background image</h2>
+// Slightly lighten a color
+lighten()
 
-<p>Using an image as a background can be complicated. The easiest way to do this, without digging in too much, is to set the <code class="highlighter-rouge">background-image: url()</code> and use the provided mixin.</p>
+// Convert to rgba
+fade()</code></pre></figure>
 
-<h3 id="example">Example</h3>
+<h3 id="usage">Usage</h3>
 
-<figure class="highlight"><pre><code class="language-less" data-lang="less">// Here's the mixin
-.background-image() {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-}
-
-// Here's how to use it
-.element {
-  background-image: url('.../image.jpg');
-  .background-image();
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  background: fade(@yellow-300, 20);
 }</code></pre></figure>
 
-<p>Using this method, you can also set a fallback image by having multiple values in the <code class="highlighter-rouge">background-image</code>. This is helpful when you’re not hosting the source of the image you want to set.</p>
+<h3 id="outputs-to">Outputs to:</h3>
 
-<h3 id="example-1">Example</h3>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
-  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('http://twitter.com/.../avatar.jpg')</span><span class="o">,</span> <span class="sx">url('.../backup-image.jpg')</span><span class="p">;</span>
-  <span class="nc">.background-image</span><span class="o">()</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<hr />
-
-<h2 id="background-size-cover-vs-contain">background-size: cover vs. contain</h2>
-
-<p><code class="highlighter-rouge">background-size: cover</code> will stretch the image to cover the entire element, no matter the proportions, but it will keep the image’s original aspect ratio.</p>
-
-<p><code class="highlighter-rouge">background-size: contain</code> will constrain the image to fit within the bounds of the element, but will always keep the entire image visible (still maintaining aspect ratio).</p>
-
-<hr />
-
-<h2 id="background-position-and-background-repeat">background-position and background-repeat</h2>
-
-<p>Both of these are typically used alongside a background-image. <code class="highlighter-rouge">background-position</code> sets the position of the background image, relative to it’s element. <code class="highlighter-rouge">background-repeat</code> controls how your image repeats in the container (images repeat infinitely in both directions by default!);</p>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  background: rgba(255, 244, 29, 0.2);
+}</code></pre></figure>
 
 	</div>
 

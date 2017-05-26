@@ -2014,13 +2014,13 @@
     
       <li data-filter-id="css-text-handling"><a class="page-link" href="#css-text-handling" id="link-css-text-handling">CSS Text Handling</a></li>
     
-      <li data-filter-id="SCSS-color-variables"><a class="page-link" href="#SCSS-color-variables" id="link-SCSS-color-variables">SCSS Color Variables</a></li>
+      <li data-filter-id="Less-color-variables"><a class="page-link" href="#Less-color-variables" id="link-Less-color-variables">Less Color Variables</a></li>
     
-      <li data-filter-id="SCSS-SCSS-mixins"><a class="page-link" href="#SCSS-SCSS-mixins" id="link-SCSS-SCSS-mixins">SCSS Mixins</a></li>
+      <li data-filter-id="Less-mixins"><a class="page-link" href="#Less-mixins" id="link-Less-mixins">Less Mixins</a></li>
     
-      <li data-filter-id="scss-primer"><a class="page-link" href="#scss-primer" id="link-scss-primer">SCSS Primer</a></li>
+      <li data-filter-id="Less-primer"><a class="page-link" href="#Less-primer" id="link-Less-primer">Less Primer</a></li>
     
-      <li data-filter-id="variables-in-scss"><a class="page-link" href="#variables-in-scss" id="link-variables-in-scss">Variables in SCSS</a></li>
+      <li data-filter-id="variables-in-less"><a class="page-link" href="#variables-in-less" id="link-variables-in-less">Variables in Less</a></li>
     
 	</ul>
 </nav>
@@ -2042,52 +2042,33 @@
 
 <h5 id="example-values-depends-on-your-project">EXAMPLE VALUES: Depends on your project.</h5>
 
-<p>To set what font gets used, use the <code class="highlighter-rouge">font-family</code> property. In most of our projects this is done for you in our base css.</p>
+<p>To set what font gets used, use the <code class="highlighter-rouge">font-family</code> property. This is set globally for our products.</p>
 
-<p>However, if you want to change what font is used, you should have numerous fallbacks like.</p>
+<p>However, if you want to change what font is used, you should have numerous fallbacks like this:</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Source Sans Pro"</span><span class="o">,</span> <span class="n">Verdana</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Roboto"</span><span class="o">,</span> <span class="n">Arial</span> <span class="n">Narrow</span><span class="o">,</span> <span class="n">Geneva</span><span class="o">,</span> <span class="n">Lucida</span> <span class="n">Grande</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>In this example Verdana will be used if the broswer does not have access to “Source Sans Pro”, then Helvetica, etc…</p>
-
-<p>If you want to have them download a font, you’ll want to use <code class="highlighter-rouge">@font-face</code>. Here’s a helpful resource <strong>TODO PROVIDE RESOURCE</strong></p>
+<p>In this example Arial Narrow will be used if the browser does not have access to “Roboto”, then Geneva, etc…</p>
 
 <hr />
 
 <h2 id="font-size">font-size</h2>
 
-<h5 id="example-values-12px-12rem-14rem-16rem">EXAMPLE VALUES: <code class="highlighter-rouge">12px</code>, <code class="highlighter-rouge">1.2rem</code>, <code class="highlighter-rouge">1.4rem</code>, <code class="highlighter-rouge">1.6rem</code></h5>
+<h5 id="example-values-12px">EXAMPLE VALUES: <code class="highlighter-rouge">12px</code></h5>
 
-<p><code class="highlighter-rouge">font-size</code> controls how big the words will appear.</p>
-
-<p>There are several units you can use, but we recommend pixels (<code class="highlighter-rouge">px</code>) and root ems (<code class="highlighter-rouge">rem</code>). Root ems are a percentage of the font size set on the html element.</p>
-
-<p>As part of our code, we have a mixin that you should use in most cases. It will take care of both rems and a pixel fallback.</p>
-
-<h3 id="usage">usage</h3>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="k">@include</span> <span class="nd">font-size</span><span class="p">(</span><span class="m">1</span><span class="mi">.6</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
-<h3 id="outputs">outputs</h3>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="mi">.6rem</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<p><code class="highlighter-rouge">font-size</code> controls the size the text will rendered at. We stick to <code class="highlighter-rouge">px</code> as our decided unit.</p>
 
 <hr />
 
 <h2 id="color">color</h2>
 
-<h5 id="example-values-off-black-ffffff-tintmid-grey-07-red-rgba255-255-255-05">EXAMPLE VALUES: <code class="highlighter-rouge">$off-black</code>, <code class="highlighter-rouge">#ffffff</code>, <code class="highlighter-rouge">tint($mid-grey, 0.7)</code>, <code class="highlighter-rouge">$red</code>, <code class="highlighter-rouge">rgba(255, 255, 255, 0.5)</code></h5>
+<h5 id="example-values-grey-1000-ffffff-red-300-fadewhite-50">EXAMPLE VALUES: <code class="highlighter-rouge">@grey-1000</code>, <code class="highlighter-rouge">#ffffff</code>, <code class="highlighter-rouge">@red-300</code>, <code class="highlighter-rouge">fade(@white, 50)</code></h5>
 
 <p><code class="highlighter-rouge">color</code> changes the color of the text.</p>
 
-<p>In our code, we have variables corresponding to color values. <a href="#scss-color-variables">SCSS Color Variables</a></p>
+<p>In our code, we have variables corresponding to color values. <a href="#Less-color-variables">Less Color Variables</a></p>
 
 <hr />
 
@@ -2099,10 +2080,10 @@
 
 <p>For buttons, we commonly set the line-height to the height of the button to center the text vertically within the button.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.button</span> <span class="p">{</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
-  <span class="nl">line-height</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.button {
+  height: 30px;
+  line-height: 30px;
+}</code></pre></figure>
 
 <hr />
 
@@ -2116,9 +2097,15 @@
 
 <h2 id="font-weight">font-weight</h2>
 
-<h5 id="example-values-normal400-semibold600-bold700">EXAMPLE VALUES: <code class="highlighter-rouge">normal</code>/<code class="highlighter-rouge">400</code>, <code class="highlighter-rouge">semibold</code>/<code class="highlighter-rouge">600</code>, <code class="highlighter-rouge">bold</code>/<code class="highlighter-rouge">700</code></h5>
+<h5 id="example-values-normal400-semi-bold600-bold700">EXAMPLE VALUES: <code class="highlighter-rouge">@normal</code>/<code class="highlighter-rouge">400</code>, <code class="highlighter-rouge">@semi-bold</code>/<code class="highlighter-rouge">600</code>, <code class="highlighter-rouge">@bold</code>/<code class="highlighter-rouge">700</code></h5>
 
-<p><code class="highlighter-rouge">font-weight</code> tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These three are the most common values we use with Source Sans Pro.</p>
+<p><code class="highlighter-rouge">font-weight</code> tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These are the only weights we support.</p>
+
+<p>We’ve defined variables to make this easier:</p>
+
+<figure class="highlight"><pre><code class="language-less" data-lang="less">@normal: 400;
+@semi-bold: 600;
+@bold: 700;</code></pre></figure>
 
 <hr />
 
@@ -2140,11 +2127,11 @@
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"name"</span><span class="nt">&gt;</span>Shaun Fox<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.name</span> <span class="p">{</span>
-  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
-  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.name {
+  text-transform: uppercase;
+  font-weight: @semi-bold;
+  letter-spacing: 1px;
+}</code></pre></figure>
 
 <hr />
 
@@ -2162,14 +2149,14 @@
 
 <p><code class="highlighter-rouge">text-decoration</code> is most often used to override the default browser styling of anchor tags. Frequently we’ll set the anchor to <code class="highlighter-rouge">text-decoration: none</code>, which removes the underline, but we’ll give it other attributes that help define it as a link. For example:</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.link</span> <span class="p">{</span>
-  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="nv">$blue</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.link {
+  text-decoration: none;
+  color: $blue;
 
-  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
-  	<span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$blue</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  &amp;:hover {
+  	border-bottom: 1px solid $blue;
+  }
+}</code></pre></figure>
 
 <hr />
 

@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>SCSS Color Variables</title>
-  <meta name="description" content="Our color variables, defined in _colors.scss, are designed to help us reuse colors without having to remember hex values.">
-
-  <link rel="icon" href="/less-css-guide/assets/img/favicon.ico" type="image/x-icon" />
-	<link rel="shortcut icon" href="/less-css-guide/assets/img/favicon.ico" type="image/x-icon" />
-
-  <script src="/less-css-guide/assets/js/jquery-2.0.3.min.js"></script>
-
-  <link rel="stylesheet" href="/less-css-guide/assets/css/main.css">
-  <link rel="canonical" href="/less-css-guide/css/scss/2016/05/13/SCSS-color-variables.html">
-  <link rel="alternate" type="application/rss+xml" title="Less CSS Guide" href="/less-css-guide/feed.xml">
-</head>
-
-
-  <body>
-
-    <svg id="fox-icons" display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1140" height="20" viewBox="0 0 1140 20">
+<svg id="fox-icons" display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1140" height="20" viewBox="0 0 1140 20">
 	<defs>
 
 		<g id="ico-arrow-up">
@@ -163,6 +139,13 @@
 				c0,0.6-0.4,1-1,1s-1,0.4-1,1c0,0.1,0,0.2,0.1,0.3l-1.6,1.1l0.6,0.8L22.4,10L21.8,9.2z"></path>
 		</g>
 
+		<g id="ico-bluetooth">
+			<path d="M15,22.1c-0.1,0-0.1,0-0.2,0c-0.2-0.1-0.3-0.3-0.3-0.5v-5.4l-2.8,2.5c-0.2,0.2-0.5,0.2-0.7,0c-0.2-0.2-0.2-0.5,0-0.7
+			l3.2-2.9l-3.2-2.9c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0l2.8,2.5V8.4c0-0.2,0.1-0.4,0.3-0.5c0.2-0.1,0.4,0,0.5,0.1l3.6,3.3
+			c0.1,0.1,0.2,0.2,0.2,0.4S19,12,18.9,12.1L15.7,15l3.2,2.9c0.1,0.1,0.2,0.2,0.2,0.4s-0.1,0.3-0.2,0.4l-3.6,3.3
+			C15.2,22,15.1,22.1,15,22.1z M15.5,16.1v4.3l2.4-2.1L15.5,16.1z M15.5,9.6v4.3l2.4-2.1L15.5,9.6z"/>
+		</g>
+
 		<g id="ico-book">
 			<path d="M21.5,7h-11l-2,2v14h11v-2h2V7z M20.5,20h-1V9H9.9l1-1h9.6V20z"></path>
 		</g>
@@ -249,6 +232,11 @@
 
 		<g id="ico-check">
 			<polygon points="13,20.1 8.3,15.4 9.7,13.9 13,17.2 20.3,9.9 21.7,11.4   "></polygon>
+		</g>
+
+		<g id="ico-check-circle">
+			<path d="M15,7c-4.4,0-8,3.6-8,8s3.6,8,8,8c4.4,0,8-3.6,8-8S19.4,7,15,7z M13.6,18.8l-3.7-3.7l1.2-1.2l2.5,2.5l5.3-5.3l1.2,1.2
+				L13.6,18.8z"/>
 		</g>
 
 		<g id="ico-checkbox">
@@ -373,6 +361,13 @@
 				c0,0-0.3,0.1-0.5,0.5c-0.1,0.1-0.1,0.2-0.1,0.4c0,0.1-0.1,0.3,0,0.4c0,0.3,0.1,0.6,0.3,0.9C11.2,11.5,11.3,11.6,11.4,11.8z"></path>
 		</g>
 
+		<g id="ico-comment">
+			<path d="M17.4,17.6h-4.8c-0.2,0-0.5,0.1-0.7,0.2L10.6,19l0-0.3c0-0.3,0-0.6-0.2-0.8c-0.2-0.2-0.5-0.4-0.8-0.4H8.4v-5.2h2.2v-1H8.1
+				c-0.4,0-0.8,0.3-0.8,0.8v5.8c0,0.4,0.3,0.8,0.8,0.8h1.5l-0.5,3l3.5-3h5c0.4,0,0.7-0.3,0.7-0.7l-1-0.9V17.6z"/>
+			<path d="M21.9,8.4h-9.5c-0.4,0-0.8,0.3-0.8,0.8v5.8c0,0.4,0.3,0.8,0.8,0.8h5l3.5,3l-0.5-3h1.5c0.4,0,0.8-0.3,0.8-0.8V9.2
+				C22.6,8.7,22.3,8.4,21.9,8.4z M18.1,12.9h-5v-0.8h5V12.9z M21.1,10.7h-8V9.9h8V10.7z"/>
+		</g>
+
 		<g id="ico-computer">
 			<path d="M22.8,19.6l-0.9-1.3C22,18.2,22,18.1,22,18v-8c0-0.3-0.2-0.5-0.5-0.5H8.5C8.2,9.5,8,9.7,8,10v8
 			c0,0.1,0.1,0.2,0.1,0.3l-1,1.4C7,19.9,7,20.1,7,20.2c0.1,0.2,0.3,0.3,0.4,0.3h15c0,0,0,0,0,0c0.3,0,0.5-0.2,0.5-0.5
@@ -404,8 +399,29 @@
 				17.5,13.2 17.5,17.5 12.5,17.5 12.5,7.5 10.5,7.5 10.5,10.5 7.5,10.5 7.5,12.5 10.5,12.5 10.5,19.5 22.5,19.5 22.5,17.5   "></polygon>
 		</g>
 
+		<g id="ico-database">
+			<path d="M21,10C21,10,21,10,21,10c0-1.7-2.7-3-6-3c-3.3,0-6,1.3-6,3v0v2c0,1.6,2.7,3,6,3c3.3,0,6-1.3,6-3L21,10C21,10,21,10,21,10z
+				 M15,8c3,0,5,1.2,5,2c0,0.8-2,2-5,2c-3,0-5-1.2-5-2C10,9.2,12,8,15,8z"/>
+			<path d="M15,19c3.3,0,6-1.3,6-3c0,0,0-1.5,0-1.5c0,0,0-0.2,0-0.3s-0.2-0.3-0.4-0.1c-0.9,1.1-3,1.9-5.6,1.9s-4.7-0.8-5.6-1.9
+				c-0.1-0.2-0.3,0-0.4,0.1s0,0.3,0,0.3c0,0,0,1.5,0,1.5C9,17.7,11.7,19,15,19z"/>
+			<path d="M15,23c3.3,0,6-1.3,6-3c0,0,0-1.5,0-1.5c0,0,0-0.2,0-0.3s-0.2-0.3-0.4-0.1c-0.9,1.1-3,1.9-5.6,1.9s-4.7-0.8-5.6-1.9
+				c-0.1-0.2-0.3,0-0.4,0.1s0,0.3,0,0.3c0,0,0,1.5,0,1.5C9,21.7,11.7,23,15,23z"/>
+		</g>
+
 		<g id="ico-delete">
 			<path d="M11,10l-4,5l4,5h12V10H11z M20,17L19,18l-2-2l-2,2L14,17l2-2l-2-2L15,12l2,2l2-2L20,13l-2,2L20,17z"></path>
+		</g>
+
+		<g id="ico-desktop">
+			<path d="M22.5,8.2h-15C7.2,8.2,7,8.5,7,8.8v10c0,0.3,0.2,0.5,0.5,0.5h5.7l-0.2,2h-1v0c0,0,0,0,0,0c-0.1,0-0.2,0.1-0.2,0.2
+			s0.1,0.2,0.2,0.2c0,0,0,0,0,0v0h6c0.1,0,0.2-0.1,0.2-0.2s-0.1-0.2-0.2-0.2h-1l-0.2-2h5.7c0.3,0,0.5-0.2,0.5-0.5v-10
+			C23,8.5,22.8,8.2,22.5,8.2z M22,18.2H8v-9h14V18.2z"/>
+		</g>
+
+		<g id="ico-divider">
+			<rect x="6" y="14.5" width="18" height="1"/>
+			<path d="M21,13H9V8h12V13z M10,12h10V9H10V12z"/>
+			<path d="M21,22H9v-5h12V22z M10,21h10v-3H10V21z"/>
 		</g>
 
 		<g id="ico-document">
@@ -575,6 +591,13 @@
 				l-1.2-5c-0.2-0.6-0.5-0.9-1-0.9H9.3l0.2-2h8.1V10c0-0.3,0.2-0.5,0.5-0.5h3c0.3,0,0.5,0.2,0.5,0.5v0.5h2L22.8,18.4z"/>
 		</g>
 
+		<g id="ico-folder-remove">
+			<path d="M23.5,9.5h-1c0-0.6-0.4-1-1-1h-4c-0.6,0-1,0.4-1,1H9.4c-0.5,0-1,0.4-1,0.9l-0.2,2.1H6.5
+				c-0.6,0-1.1,0.5-1,1.1l2,7.9h16l1-10.9C24.5,10,24.1,9.5,23.5,9.5z M17,15.6L15.6,17l1.4,1.4l-1.1,1.1l-1.4-1.4l-1.4,1.4L12,18.4
+				l1.4-1.4L12,15.6l1.1-1.1l1.4,1.4l1.4-1.4L17,15.6z M22.8,18.4l-1.2-5c-0.2-0.6-0.5-0.9-1-0.9H9.3l0.2-2h8.1V10
+				c0-0.3,0.2-0.5,0.5-0.5h3c0.3,0,0.5,0.2,0.5,0.5v0.5h2L22.8,18.4z"/>
+		</g>
+
 		<g id="ico-folder-color">
 			<path fill="#D1C6A4" d="M23.1,18.6l-0.3-1.3l-0.9-3.9c-0.2-0.6-0.5-0.9-1-0.9H9H8H6.2c-0.6,0-1.2,0.5-1,1.1l2.1,8.2h16.7
 			L23.1,18.6L23.1,18.6z"/>
@@ -589,6 +612,15 @@
 				c0.5,0,0.9,0.3,1,0.9v0l0.9,3.9l0.3,1.3l0.8,3.2l1-11.4C24.9,9.8,24.5,9.3,23.9,9.3z"/>
 			<polygon fill="#111111" points="13.7,19.8 13.7,17.8 11.7,17.8 11.7,16.3 13.7,16.3 13.7,14.3 15.2,14.3 15.2,16.3 17.2,16.3 17.2,17.8 15.2,17.8
 				15.2,19.8 	"/>
+		</g>
+
+		<g id="ico-folder-remove-color">
+			<path fill="#D1C6A4" d="M23.1,18.6l-0.3-1.3l-0.9-3.9c-0.2-0.6-0.5-0.9-1-0.9H9H8H6.2c-0.6,0-1.2,0.5-1,1.1l2.1,8.2h16.7
+				L23.1,18.6L23.1,18.6z"/>
+			<path fill="#A7A085" d="M23.9,9.3h-1c0-0.6-0.5-1-1-1h-4.2c-0.6,0-1,0.5-1,1H9.2c-0.5,0-1,0.4-1,1L8,12.4h1h11.8
+				c0.5,0,0.9,0.3,1,0.9v0l0.9,3.9l0.3,1.3l0.8,3.2l1-11.4C24.9,9.8,24.5,9.3,23.9,9.3z"/>
+			<polygon fill="#EC2127" points="15.9,19.6 14.5,18.1 13.1,19.6 12,18.5 13.4,17.1 12,15.7 13.1,14.6 14.5,16 15.9,14.6 17,15.7
+				15.5,17.1 17,18.5 	"/>
 		</g>
 
 		<g id="ico-folder-shared-color">
@@ -664,6 +696,19 @@
 				c0,0,0-1,0-1.8c0.8,0,1.8,0,1.8,0v-1.8C25,14.1,24,14.1,23.2,14.1z"></path>
 		</g>
 
+		<g id="ico-google-analytics">
+			<path d="M21.8,7c-3,0-10.7,0-13.6,0C7.5,7,7,7.5,7,8.1v9.4l4.3-4.4l3.8,3.8l8-8V8.2C23,7.5,22.4,7,21.8,7z"/>
+			<path d="M13.2,18.8V15l-1.9,1.9c0,0-4.3,4.3-4.3,4.3v0.7C7,22.5,7.5,23,8.2,23h13.7c0.6,0,1.1-0.5,1.1-1.1v-9.1
+				l-8,8L13.2,18.8z"/>
+		</g>
+
+		<g id="ico-google-analytics-color">
+			<path fill="#F79A22" d="M7,8.1v9.4l4.3-4.4l3.8,3.8l8-8V8.2C23,7.5,22.4,7,21.8,7c-3,0-10.7,0-13.6,0C7.5,7,7,7.5,7,8.1z"/>
+			<polygon fill="#F79A22" points="13.2,15 11.3,16.9 13.2,18.8 		"/>
+			<path fill="#F15A26" d="M7,21.2v0.7C7,22.5,7.5,23,8.2,23h13.7c0.6,0,1.1-0.5,1.1-1.1v-9.1l-8,8l-3.8-3.8C11.3,16.9,7,21.2,7,21.2
+				z"/>
+		</g>
+
 		<g id="ico-grid">
 			<rect x="13" y="13" width="4" height="4"></rect>
 			<rect x="13" y="19" width="4" height="4"></rect>
@@ -717,6 +762,12 @@
 			<rect x="7" y="19" width="16" height="2"></rect>
 			<rect x="7" y="14" width="16" height="2"></rect>
 			<rect x="7" y="9" width="16" height="2"></rect>
+		</g>
+
+		<g id="ico-heading">
+			<path d="M19.1,14l-2,6.5h1.6l0.3-1.1H21l0.3,1.1h1.6l-2-6.5H19.1z M19.3,18.2l0.7-2.4l0.7,2.4H19.3z"/>
+			<path d="M12.9,9.5h-2.5l-3.4,11h2.2l0,0l0.6-2.2h3.5c0.3,0.9,0.5,1.7,0.6,2.2l0,0h2.2L12.9,9.5z M10.4,16.6l1.3-4.6
+				l0,0l0,0v0c0,0,0.6,2.3,1.3,4.6H10.4z"/>
 		</g>
 
 		<g id="ico-headphones">
@@ -792,11 +843,18 @@
 		</g>
 
 		<g id="ico-instagram">
-			<path d="M21.2,13.8h-1.4c0.1,0.4,0.2,0.8,0.2,1.2c0,2.7-2.2,4.9-4.9,4.9
-			c-2.7,0-4.9-2.2-4.9-4.9c0-0.4,0.1-0.8,0.2-1.2H8.8v6.8c0,0.3,0.3,0.6,0.6,0.6h11.1c0.3,0,0.6-0.3,0.6-0.6V13.8z M21.2,9.5
-			c0-0.3-0.3-0.6-0.6-0.6h-1.8c-0.3,0-0.6,0.3-0.6,0.6v1.8c0,0.3,0.3,0.6,0.6,0.6h1.8c0.3,0,0.6-0.3,0.6-0.6V9.5z M15,11.9
-			c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1s3.1-1.4,3.1-3.1C18.1,13.3,16.7,11.9,15,11.9 M21.2,23H8.8c-1,0-1.8-0.8-1.8-1.8V8.8
-			C7,7.8,7.8,7,8.8,7h12.3c1,0,1.8,0.8,1.8,1.8v12.3C23,22.2,22.2,23,21.2,23"></path>
+			<path d="M15,8.4c2.1,0,2.4,0,3.2,0c0.8,0,1.2,0.2,1.5,0.3c0.4,0.1,0.6,0.3,0.9,0.6c0.3,0.3,0.5,0.5,0.6,0.9
+				c0.1,0.3,0.2,0.7,0.3,1.5c0,0.8,0,1.1,0,3.2s0,2.4,0,3.2c0,0.8-0.2,1.2-0.3,1.5c-0.1,0.4-0.3,0.6-0.6,0.9c-0.3,0.3-0.5,0.5-0.9,0.6
+				c-0.3,0.1-0.7,0.2-1.5,0.3c-0.8,0-1.1,0-3.2,0s-2.4,0-3.2,0c-0.8,0-1.2-0.2-1.5-0.3c-0.4-0.1-0.6-0.3-0.9-0.6
+				c-0.3-0.3-0.5-0.5-0.6-0.9c-0.1-0.3-0.2-0.7-0.3-1.5c0-0.8,0-1.1,0-3.2s0-2.4,0-3.2c0-0.8,0.2-1.2,0.3-1.5c0.1-0.4,0.3-0.6,0.6-0.9
+				c0.3-0.3,0.5-0.5,0.9-0.6c0.3-0.1,0.7-0.2,1.5-0.3C12.6,8.4,12.9,8.4,15,8.4 M15,7c-2.2,0-2.4,0-3.3,0c-0.9,0-1.4,0.2-1.9,0.4
+				c-0.5,0.2-1,0.5-1.4,0.9C7.9,8.8,7.6,9.2,7.4,9.8c-0.2,0.5-0.3,1.1-0.4,1.9c0,0.9,0,1.1,0,3.3c0,2.2,0,2.4,0,3.3
+				c0,0.9,0.2,1.4,0.4,1.9c0.2,0.5,0.5,1,0.9,1.4c0.4,0.4,0.9,0.7,1.4,0.9c0.5,0.2,1.1,0.3,1.9,0.4c0.9,0,1.1,0,3.3,0s2.4,0,3.3,0
+				c0.9,0,1.4-0.2,1.9-0.4c0.5-0.2,1-0.5,1.4-0.9c0.4-0.4,0.7-0.9,0.9-1.4c0.2-0.5,0.3-1.1,0.4-1.9c0-0.9,0-1.1,0-3.3s0-2.4,0-3.3
+				c0-0.9-0.2-1.4-0.4-1.9c-0.2-0.5-0.5-1-0.9-1.4c-0.4-0.4-0.9-0.7-1.4-0.9c-0.5-0.2-1.1-0.3-1.9-0.4C17.4,7,17.2,7,15,7L15,7z"/>
+			<path d="M15,10.9c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1S17.3,10.9,15,10.9z M15,17.7
+				c-1.5,0-2.7-1.2-2.7-2.7s1.2-2.7,2.7-2.7s2.7,1.2,2.7,2.7S16.5,17.7,15,17.7z"/>
+			<circle cx="19.3" cy="10.7" r="1"/>
 		</g>
 
 		<g id="ico-light-bulb">
@@ -905,6 +963,12 @@
 			<path d="M20,15v-3c0-2.8-2.2-5-5-5s-5,2.2-5,5h2c0-1.7,1.3-3,3-3s3,1.3,3,3v3H8v8h14v-8H20z"></path>
 		</g>
 
+		<g id="ico-magnet">
+			<path d="M13,10c0-0.3-0.2-0.5-0.5-0.5h-1.6c-0.3,0-0.5,0.2-0.5,0.5v1.5H13V10z"/>
+			<path d="M19.1,9.5h-1.6C17.2,9.5,17,9.7,17,10v1.5h2.6V10C19.6,9.7,19.4,9.5,19.1,9.5z"/>
+			<path d="M17,15.9c0,1.1-0.9,2-2,2s-2-0.9-2-2v-3.4h-2.6v3.4c0,2.5,2.1,4.6,4.6,4.6s4.6-2.1,4.6-4.6v-3.4H17V15.9z"/>
+		</g>
+
 		<g id="ico-mail">
 			<path d="M7,10V20h16V10H7z M15,16.3L8.8,11h12.4L15,16.3z M11.9,15L8,18.3v-6.7L11.9,15z M12.7,15.6l2.3,2l2.3-2l4,3.4H8.7
 			L12.7,15.6z M18.1,15l3.9-3.4v6.7L18.1,15z"></path>
@@ -1008,6 +1072,12 @@
 		<g id="ico-music-note">
 			<path d="M12.5,9v9.4C12.1,18.2,11.6,18,11,18c-1.4,0-2.5,0.9-2.5,2c0,1.1,1.1,2,2.5,2c1.4,0,2.5-0.9,2.5-2v-8.1l7-0.8v6.3
 			C20.1,17.2,19.6,17,19,17c-1.4,0-2.5,0.9-2.5,2s1.1,2,2.5,2c1.4,0,2.5-0.9,2.5-2c0,0,0,0,0,0h0V8L12.5,9z"></path>
+		</g>
+
+		<g id="ico-my-location">
+			<circle cx="15" cy="15" r="3.5"/>
+			<path d="M25,14.2h-2c-0.4-3.8-3.4-6.9-7.2-7.2V5h-1.5v2c-3.8,0.4-6.9,3.4-7.2,7.2H5v1.5h2c0.4,3.8,3.4,6.9,7.2,7.2v2h1.5v-2
+				c3.8-0.4,6.9-3.4,7.2-7.2h2V14.2z M15,21.7c-3.7,0-6.7-3-6.7-6.7s3-6.7,6.7-6.7c3.7,0,6.7,3,6.7,6.7S18.7,21.7,15,21.7z"/>
 		</g>
 
 		<g id="ico-new-window">
@@ -1173,9 +1243,32 @@
 			<polygon points="23.2,14 10.6,14 13.9,10.7 12.5,9.3 6.8,15 12.5,20.7 13.9,19.3 10.6,16 23.2,16 "></polygon>
 		</g>
 
+		<g id="ico-pointer-2-up">
+			<polygon points="17.9,14.3 15,10 12.1,14.3 12.9,14.9 14.5,12.5 14.5,20 15.5,20 15.5,12.5 17.1,14.9 "/>
+		</g>
+
+		<g id="ico-pointer-2-down">
+			<polygon points="12.1,15.7 15,20 17.9,15.7 17.1,15.1 15.5,17.5 15.5,10 14.5,10 14.5,17.5 12.9,15.1 "/>
+		</g>
+
+		<g id="ico-pointer-2-right">
+			<polygon points="15.7,17.9 20,15 15.7,12.1 15.1,12.9 17.5,14.5 10,14.5 10,15.5 17.5,15.5 15.1,17.1 "/>
+		</g>
+
+		<g id="ico-pointer-2-left">
+			<polygon points="14.3,12.1 10,15 14.3,17.9 14.9,17.1 12.5,15.5 20,15.5 20,14.5 12.5,14.5 14.9,12.9 "/>
+		</g>
+
 		<g id="ico-popup">
 			<polygon points="8.5,7 8.5,11 9.5,11 9.5,10 23.5,10 23.5,17 22.5,17 22.5,18 24.5,18 24.5,7  "></polygon>
 			<path d="M5.5,23h16V12h-16V23z M6.5,15h14v7h-14V15z"></path>
+		</g>
+
+		<g id="ico-post">
+			<path d="M17,19.5h-6v-9h4v-2h-4c-0.6,0-1,0.4-1,1v12c0,0.6,0.4,1,1,1h6c0.6,0,1-0.4,1-1V14h-1V19.5z M14,21.8
+				c-0.4,0-0.8-0.3-0.8-0.8c0-0.4,0.3-0.8,0.8-0.8c0.4,0,0.8,0.3,0.8,0.8C14.7,21.4,14.4,21.8,14,21.8z"/>
+			<path d="M23.5,7.5h-7C16.2,7.5,16,7.7,16,8v4.5c0,0.3,0.2,0.5,0.5,0.5H20l-1,2.5l3.5-2.5h1c0.3,0,0.5-0.2,0.5-0.5V8
+				C24,7.7,23.8,7.5,23.5,7.5z"/>
 		</g>
 
 		<g id="ico-prickly-pear">
@@ -1295,6 +1388,12 @@
 			c2.6,0,5.2-1.3,6.6-3.7C22.9,16.3,22.8,13.3,21.3,11z"></path>
 			<path d="M15.5,9.5l-1.8,1.8l1.4,1.4l4-4l-4-4l-1.4,1.4l1.3,1.4c-2.6,0-5.2,1.3-6.6,3.7c-1.5,2.5-1.3,5.5,0.2,7.9l1.5-1.4
 			c-0.9-1.6-0.9-3.7,0.1-5.4C11.4,10.3,13.5,9.3,15.5,9.5z"></path>
+		</g>
+
+		<g id="ico-reset">
+			<path d="M15,7.5c0,0-0.1,0-0.1,0l1.3-1.4l-1.4-1.4l-4,4l4,4l1.4-1.4l-1.8-1.8l0,0c0.2,0,0.4,0,0.5,0c3,0,5.5,2.5,5.5,5.5
+			c0,3-2.5,5.5-5.5,5.5S9.5,18,9.5,15c0-0.9,0.2-1.8,0.7-2.6L8.7,11c-0.7,1.2-1.2,2.6-1.2,4c0,4.1,3.4,7.5,7.5,7.5s7.5-3.4,7.5-7.5
+			S19.1,7.5,15,7.5z"/>
 		</g>
 
 		<g id="ico-register">
@@ -1423,11 +1522,40 @@
 				c1.1-0.1,2.2,0.2,3.1,1C19.5,10.1,19.5,12.4,18.1,13.9z"/>
 		</g>
 
+		<g id="ico-section">
+			<polygon points="24.1,22.1 22.5,22.1 22.5,20.9 22.9,20.9 22.9,20.5 24.1,20.5 		"/>
+			<path d="M20.4,22.1h-2.1v-1.1h2.1V22.1z M16.1,22.1h-2.1v-1.1h2.1V22.1z M11.8,22.1H9.6v-1.1h2.1V22.1z"/>
+			<polygon points="7.5,22.1 5.9,22.1 5.9,20.5 7.1,20.5 7.1,20.9 7.5,20.9 		"/>
+			<path d="M7.1,18.3H5.9v-2.2h1.1V18.3z M7.1,13.9H5.9v-2.2h1.1V13.9z"/>
+			<polygon points="7.1,9.5 5.9,9.5 5.9,7.9 7.5,7.9 7.5,9.1 7.1,9.1 		"/>
+			<path d="M20.4,9.1h-2.1V7.9h2.1V9.1z M16.1,9.1h-2.1V7.9h2.1V9.1z M11.8,9.1H9.6V7.9h2.1V9.1z"/>
+			<polygon points="24.1,9.5 22.9,9.5 22.9,9.1 22.5,9.1 22.5,7.9 24.1,7.9 		"/>
+			<path d="M24.1,18.3h-1.1v-2.2h1.1V18.3z M24.1,13.9h-1.1v-2.2h1.1V13.9z"/>
+			<rect x="9" y="11" width="9" height="2"/>
+		</g>
+
+		<g id="ico-send">
+			<path d="M12.8,11.5v7H24v-7H12.8z M13.8,13.1L16,15l-2.2,1.9V13.1z M18.4,15.7l-3.8-3.2h7.6L18.4,15.7z M16.8,15.7l1.3,1.1
+				c0.1,0.1,0.2,0.1,0.3,0.1s0.2,0,0.3-0.1l1.3-1.1l2.1,1.8h-7.6L16.8,15.7z M20.8,15l2.2-1.9v3.8L20.8,15z"/>
+			<path d="M11.5,12.5h-3C8.2,12.5,8,12.7,8,13s0.2,0.5,0.5,0.5h3c0.3,0,0.5-0.2,0.5-0.5S11.7,12.5,11.5,12.5z"/>
+			<path d="M11,15c0-0.3-0.2-0.5-0.5-0.5h-4C6.2,14.5,6,14.7,6,15s0.2,0.5,0.5,0.5h4C10.7,15.5,11,15.3,11,15z"/>
+			<path d="M11.5,16.5h-3C8.2,16.5,8,16.7,8,17s0.2,0.5,0.5,0.5h3c0.3,0,0.5-0.2,0.5-0.5S11.7,16.5,11.5,16.5z"/>
+		</g>
+
 		<g id="ico-settings">
 			<path d="M22,16v-2l-1.7-0.6c-0.1-0.4-0.3-0.7-0.4-1l0.8-1.6l-1.4-1.4l-1.6,0.8c-0.3-0.2-0.7-0.3-1-0.4L16,8h-2l-0.6,1.7
 			c-0.4,0.1-0.7,0.3-1,0.4l-1.6-0.8l-1.4,1.4l0.8,1.6c-0.2,0.3-0.3,0.7-0.4,1L8,14v2l1.7,0.6c0.1,0.4,0.3,0.7,0.4,1l-0.8,1.6l1.4,1.4
 			l1.6-0.8c0.3,0.2,0.7,0.3,1,0.4L14,22h2l0.6-1.7c0.4-0.1,0.7-0.3,1-0.4l1.6,0.8l1.4-1.4l-0.8-1.6c0.2-0.3,0.3-0.7,0.4-1L22,16z
 			 M15,17c-1.1,0-2-0.9-2-2c0-1.1,0.9-2,2-2s2,0.9,2,2C17,16.1,16.1,17,15,17z"></path>
+		</g>
+
+		<g id="ico-select">
+			<path d="M19.3,9h-8.6C9.8,9,9,9.8,9,10.7v8.6c0,0.9,0.8,1.7,1.7,1.7h8.6c0.9,0,1.7-0.8,1.7-1.7v-8.6C21,9.8,20.2,9,19.3,9z M15,17.6 l-3.2-3.2l0.9-0.9l2.3,2.3l2.3-2.3l0.9,0.9L15,17.6z"/>
+		</g>
+
+		<g id="ico-share">
+			<path d="M17.6,7.3l1.5,2.1c-3.6,1.5-5.5,4.5-4.3,8.2c0.9-2.3,3-4.2,5.7-5.2l0.7,2.4l3.3-6.1L17.6,7.3z"/>
+			<polygon points="19.5,19.5 10.5,19.5 10.5,10.5 14.8,10.5 14.8,9.5 9.5,9.5 9.5,20.5 20.5,20.5 20.5,15.2 19.5,15.2 	"/>
 		</g>
 
 		<g id="ico-shared">
@@ -1506,6 +1634,19 @@
 				l-0.2,3.4l-1.6,2c-0.1,0.1-0.1,0.2,0,0.3c0.1,0.1,0.2,0.1,0.3,0l2-1.6C13.7,15.7,13.8,15.6,13.9,15.4z"/>
 			<path d="M17,15h0.2v0.5H17c-0.1,0-0.2-0.1-0.2-0.2S16.9,15,17,15z"/>
 			<polygon points="22.6,13 20.2,10.6 20.2,20.8 18.7,20.8 18.7,10.6 16.3,13 15.2,12 19.4,7.8 23.6,12 		"/>
+		</g>
+
+		<g id="ico-spacer">
+			<rect x="6" y="7" width="18" height="1"/>
+			<rect x="6" y="22" width="18" height="1"/>
+			<polygon points="23,19 21.6,19 21.6,18 22,18 22,17.6 23,17.6 		"/>
+			<path d="M19.7,19h-1.9v-1h1.9V19z M15.9,19h-1.9v-1h1.9V19z M12.2,19h-1.9v-1h1.9V19z"/>
+			<polygon points="8.4,19 7,19 7,17.6 8,17.6 8,18 8.4,18 		"/>
+			<rect x="7" y="14.1" width="1" height="1.7"/>
+			<polygon points="8,12.4 7,12.4 7,11 8.4,11 8.4,12 8,12 		"/>
+			<path d="M19.7,12h-1.9v-1h1.9V12z M15.9,12h-1.9v-1h1.9V12z M12.2,12h-1.9v-1h1.9V12z"/>
+			<polygon points="23,12.4 22,12.4 22,12 21.6,12 21.6,11 23,11 		"/>
+			<rect x="22" y="14.1" width="1" height="1.7"/>
 		</g>
 
 		<g id="ico-spinner-1">
@@ -1646,6 +1787,12 @@
 			<polygon points="20,15.5 10,15.5 10,12.5 9,12.5 9,21.5 21,21.5 21,12.5 20,12.5  "></polygon>
 		</g>
 
+		<g id="ico-suitcase">
+			<path d="M18,9.2c0-0.3-0.2-0.5-0.5-0.5h-5C12.2,8.8,12,9,12,9.2v2h-1v10h8v-10h-1V9.2z M13,9.8h4v1.5h-4V9.8z"/>
+			<path d="M22,11.2h-2v10h2c0.6,0,1-0.4,1-1v-8C23,11.7,22.6,11.2,22,11.2z"/>
+			<path d="M7,12.2v8c0,0.6,0.4,1,1,1h2v-10H8C7.4,11.2,7,11.7,7,12.2z"/>
+		</g>
+
 		<g id="ico-sun">
 			<path d="M15,10c0.3,0,0.5-0.2,0.5-0.5v-2C15.5,7.2,15.3,7,15,7s-0.5,0.2-0.5,0.5v2C14.5,9.8,14.7,10,15,10z"></path>
 			<path d="M10.8,11.5c0.1,0.1,0.2,0.1,0.4,0.1s0.3,0,0.4-0.1c0.2-0.2,0.2-0.5,0-0.7L10,9.3c-0.2-0.2-0.5-0.2-0.7,0s-0.2,0.5,0,0.7
@@ -1742,6 +1889,19 @@
 			<path d="M13.5,23h9c0.3,0,0.5-0.2,0.5-0.5v0c0-0.3-0.2-0.5-0.5-0.5h-9c-0.3,0-0.5,0.2-0.5,0.5v0C13,22.8,13.2,23,13.5,23z"></path>
 		</g>
 
+		<g id="ico-text-short">
+			<path d="M18.5,16h-11C7.2,16,7,16.2,7,16.5v0C7,16.8,7.2,17,7.5,17h11c0.3,0,0.5-0.2,0.5-0.5v0C19,16.2,18.8,16,18.5,16z"/>
+			<path d="M22.5,13h-15C7.2,13,7,13.2,7,13.5v0C7,13.8,7.2,14,7.5,14h15c0.3,0,0.5-0.2,0.5-0.5v0C23,13.2,22.8,13,22.5,13z"/>
+		</g>
+
+		<g id="ico-thermometer">
+			<path d="M16,18.3v-3.1h-2v3.1c-0.6,0.3-1,1-1,1.7c0,1.1,0.9,2,2,2c1.1,0,2-0.9,2-2C17,19.3,16.6,18.7,16,18.3z"/>
+			<path d="M17,17.8c0,0,0-8.8,0-8.8c0-1.1-0.9-2-2-2s-2,0.9-2,2v8.8c-0.6,0.5-1,1.3-1,2.2c0,1.7,1.3,3,3,3s3-1.3,3-3
+				C18,19.2,17.6,18.4,17,17.8z M15,22.5c-1.4,0-2.5-1.1-2.5-2.5c0-0.7,0.3-1.4,0.8-1.9c0.1-0.1,0.2-0.2,0.2-0.4v-4.1H15v-0.5h-1.5
+				v-1.3H15v-0.5h-1.5V10H15V9.5h-1.5V9c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5v8.8c0,0.1,0.1,0.3,0.2,0.4c0.5,0.5,0.8,1.2,0.8,1.9
+				C17.5,21.4,16.4,22.5,15,22.5z"/>
+		</g>
+
 		<g id="ico-tools">
 			<path d="M9.1,13.2c0.2-0.1,0.4,0,0.5,0.1l2.3,2.3c0.5-0.5,1-1,1.5-1.5l-2.4-2.4c-0.1-0.1-0.2-0.4-0.1-0.6c0.3-1.2-0.2-2.5-1.3-3.1
 				c-0.9-0.5-1.9-0.5-2.8,0c-0.1,0.1-0.1,0.2,0,0.3l2.1,1.2c0.5,0.3-0.7,2.3-1.1,2l-2.1-1.2c-0.1-0.1-0.2,0-0.2,0.1
@@ -1824,6 +1984,11 @@
 			 M14,18.3L10.6,15l1.1-1.1l2.3,2.3l4.8-4.8l1.1,1.1L14,18.3z"/>
 		</g>
 
+		<g id="ico-video">
+			<path d="M20.1,11.8l-2.6,1.5v-1.7c0-0.3-0.2-0.5-0.5-0.5h-7c-0.3,0-0.5,0.2-0.5,0.5v7c0,0.3,0.2,0.5,0.5,0.5h7
+			c0.3,0,0.5-0.2,0.5-0.5v-1.7l2.6,1.5c0.2,0.1,0.4,0,0.4-0.2v-6C20.5,11.7,20.3,11.6,20.1,11.8z"/>
+		</g>
+
 		<g id="ico-view-on-map">
 			<path d="M13.3,17.9c0.1,0.3,0.7,1,1,1.1c0.2,0.1,0.9-0.1,1.2-0.1c0.2,0,0.5,0.2,0.7,0.3c-0.4-1.3-1-2.2-1.6-2.9
 				c-0.2,0.2-0.4,0.4-0.5,0.5c-0.2,0.1,0.3,0.7,0,0.8c-0.3,0.1-0.3-0.5-0.4-0.6c-0.2-0.1-1,0-1.1,0.3c-0.1,0.1-0.3,0.6-0.1,0.7
@@ -1871,6 +2036,36 @@
 					c1,0,1.8-0.8,1.8-1.8C19.5,11.1,19.2,10.6,18.8,10.3z"></path>
 				<circle fill="#FFFFFF" cx="17.3" cy="11.3" r="1.8"></circle>
 			</g>
+		</g>
+
+		<g id="ico-volume-high">
+			<polygon points="8,13 8,17 11,17 14,20 14,10 11,13 	"/>
+			<path d="M18.5,8.2c-0.2-0.2-0.5-0.1-0.7,0.1c-0.2,0.2-0.1,0.5,0.1,0.7c2,1.4,3.1,3.6,3.1,5.9s-1.1,4.5-3.1,5.9
+				c-0.2,0.2-0.3,0.5-0.1,0.7c0.1,0.1,0.2,0.2,0.4,0.2c0.1,0,0.2,0,0.3-0.1c2.2-1.6,3.5-4.1,3.5-6.8S20.7,9.9,18.5,8.2z"/>
+			<path d="M19.6,15c0-1.8-0.8-3.5-2.3-4.7c-0.2-0.2-0.5-0.1-0.7,0.1c-0.2,0.2-0.1,0.5,0.1,0.7c1.2,1,1.9,2.4,1.9,3.9
+				c0,1.5-0.7,2.9-1.9,3.9c-0.2,0.2-0.2,0.5-0.1,0.7c0.1,0.1,0.2,0.2,0.4,0.2c0.1,0,0.2,0,0.3-0.1C18.7,18.5,19.6,16.8,19.6,15z"/>
+			<path d="M16.1,12.5c-0.2-0.2-0.5-0.2-0.7,0c-0.2,0.2-0.2,0.5,0,0.7c0.5,0.5,0.7,1.2,0.7,1.9s-0.3,1.3-0.7,1.9
+				c-0.2,0.2-0.2,0.5,0,0.7c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.3-0.1,0.4-0.2c0.7-0.7,1-1.6,1-2.5C17.1,14.1,16.8,13.2,16.1,12.5z"/>
+		</g>
+
+		<g id="ico-volume-med">
+			<path d="M18.5,10.3c-0.2-0.2-0.5-0.1-0.7,0.1c-0.2,0.2-0.1,0.5,0.1,0.7c1.2,1,1.9,2.4,1.9,3.9s-0.7,2.9-1.9,3.9
+				c-0.2,0.2-0.2,0.5-0.1,0.7c0.1,0.1,0.2,0.2,0.4,0.2c0.1,0,0.2,0,0.3-0.1c1.4-1.2,2.3-2.9,2.3-4.7S20,11.5,18.5,10.3z"/>
+			<path d="M17.4,12.5c-0.2-0.2-0.5-0.2-0.7,0c-0.2,0.2-0.2,0.5,0,0.7c0.5,0.5,0.7,1.2,0.7,1.9s-0.3,1.3-0.7,1.9
+				c-0.2,0.2-0.2,0.5,0,0.7c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.3-0.1,0.4-0.2c0.7-0.7,1-1.6,1-2.5S18,13.2,17.4,12.5z"/>
+			<polygon points="9.2,13 9.2,17 12.2,17 15.2,20 15.2,10 12.2,13 	"/>
+		</g>
+
+		<g id="ico-volume-low">
+			<path d="M18.6,12.5c-0.2-0.2-0.5-0.2-0.7,0c-0.2,0.2-0.2,0.5,0,0.7c0.5,0.5,0.7,1.2,0.7,1.9s-0.3,1.3-0.7,1.9
+				c-0.2,0.2-0.2,0.5,0,0.7c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.3-0.1,0.4-0.2c0.7-0.7,1-1.6,1-2.5C19.6,14.1,19.2,13.2,18.6,12.5z"/>
+			<polygon points="10.4,13 10.4,17 13.4,17 16.4,20 16.4,10 13.4,13 	"/>
+		</g>
+
+		<g id="ico-volume-mute">
+			<polygon points="21.9,13.2 20.9,12.1 19.1,13.9 17.3,12.1 16.2,13.2 18,15 16.2,16.8 17.3,17.9 19.1,16.1
+				20.9,17.9 21.9,16.8 20.1,15 	"/>
+			<polygon points="8.1,13 8.1,17 11.1,17 14.1,20 14.1,10 11.1,13 	"/>
 		</g>
 
 		<g id="ico-vsco">
@@ -1954,6 +2149,12 @@
 			c0-0.5-0.1-0.9-0.2-1.3L19,14.5z"></path>
 		</g>
 
+		<g id="ico-yes-no">
+			<polygon points="18.3,23.4 18.3,19.1 20.9,23.4 22.2,23.4 22.2,16.4 20.9,16.4 20.9,20.8 18.3,16.4 17,16.4 17,23.4 "/>
+			<polygon points="12.7,7.4 11.4,7.4 10.2,9.9 9.1,7.4 7.8,7.4 9.6,11.4 9.6,11.4 9.6,14.4 10.9,14.4 10.9,11.4 10.9,11.4 	"/>
+			<rect x="4.1" y="14.5" transform="matrix(0.5343 -0.8453 0.8453 0.5343 -5.9973 19.1133)" width="20.6" height="1"/>
+		</g>
+
 		<g id="ico-zoom-in">
 			<path d="M22.4,20.9l-4.1-4.1c-0.4,0.5-0.9,1-1.4,1.4l4.1,4.1c0.2,0.2,0.5,0.2,0.7,0l0.7-0.7C22.5,21.5,22.5,21.1,22.4,20.9z"></path>
 			<path d="M18.5,13c0-3-2.5-5.5-5.5-5.5S7.5,10,7.5,13c0,3,2.5,5.5,5.5,5.5S18.5,16,18.5,13z M13,17.5c-2.5,0-4.5-2-4.5-4.5
@@ -1970,169 +2171,3 @@
 
 	</defs>
 </svg>
-
-    <header class="site-header">
-
-  <div class="wrapper">
-
-    <nav>
-	<header>
-		<a href="#intro" class="logo">Less CSS Guide</a>
-	</header>
-	<div class="filter-topics">
-		<input type="text" class="filter" placeholder="Type to Filter">
-		<svg viewBox="0 0 30 30" class="ico-search-color">
-		  <use xlink:href="#ico-search-color"></use>
-		</svg>
-	</div>
-	<ul>
-		
-    
-      <li data-filter-id="css-background"><a class="page-link" href="#css-background" id="link-css-background">CSS Background</a></li>
-    
-      <li data-filter-id="css-box-model"><a class="page-link" href="#css-box-model" id="link-css-box-model">CSS Box Model</a></li>
-    
-      <li data-filter-id="css-box-shadow"><a class="page-link" href="#css-box-shadow" id="link-css-box-shadow">CSS Box-Shadow</a></li>
-    
-      <li data-filter-id="css-cursor"><a class="page-link" href="#css-cursor" id="link-css-cursor">CSS Cursor</a></li>
-    
-      <li data-filter-id="css-display"><a class="page-link" href="#css-display" id="link-css-display">CSS Display</a></li>
-    
-      <li data-filter-id="css-layout"><a class="page-link" href="#css-layout" id="link-css-layout">CSS Layout</a></li>
-    
-      <li data-filter-id="css-opacity"><a class="page-link" href="#css-opacity" id="link-css-opacity">CSS Opacity</a></li>
-    
-      <li data-filter-id="css-overflow"><a class="page-link" href="#css-overflow" id="link-css-overflow">CSS Overflow</a></li>
-    
-      <li data-filter-id="css-primer"><a class="page-link" href="#css-primer" id="link-css-primer">CSS Primer</a></li>
-    
-      <li data-filter-id="css-pseudo-elements"><a class="page-link" href="#css-pseudo-elements" id="link-css-pseudo-elements">CSS Pseudo Elements</a></li>
-    
-      <li data-filter-id="css-pseudo-selectors"><a class="page-link" href="#css-pseudo-selectors" id="link-css-pseudo-selectors">CSS Pseudo Selectors</a></li>
-    
-      <li data-filter-id="css-selectors"><a class="page-link" href="#css-selectors" id="link-css-selectors">CSS Selectors</a></li>
-    
-      <li data-filter-id="css-text-handling"><a class="page-link" href="#css-text-handling" id="link-css-text-handling">CSS Text Handling</a></li>
-    
-      <li data-filter-id="SCSS-color-variables"><a class="page-link" href="#SCSS-color-variables" id="link-SCSS-color-variables">SCSS Color Variables</a></li>
-    
-      <li data-filter-id="SCSS-SCSS-mixins"><a class="page-link" href="#SCSS-SCSS-mixins" id="link-SCSS-SCSS-mixins">SCSS Mixins</a></li>
-    
-      <li data-filter-id="scss-primer"><a class="page-link" href="#scss-primer" id="link-scss-primer">SCSS Primer</a></li>
-    
-      <li data-filter-id="variables-in-scss"><a class="page-link" href="#variables-in-scss" id="link-variables-in-scss">Variables in SCSS</a></li>
-    
-	</ul>
-</nav>
-
-  </div>
-
-</header>
-
-
-    <div class="page-content">
-      <div class="wrapper">
-        <section id="" class="post">
-	<header class="post-title">
-		<h2></h2>
-	</header>
-
-	<div class="post-content">
-		<p>Our color variables, defined in <code class="highlighter-rouge">_colors.scss</code>, are designed to help us reuse colors without having to remember hex values.</p>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="cm">/* This is a default set of utility colors that we use from time to time. */</span>
-<span class="nv">$red</span><span class="p">:</span> <span class="mh">#ed1c24</span><span class="p">;</span>
-<span class="nv">$orange</span><span class="p">:</span> <span class="mh">#ff6600</span><span class="p">;</span>
-<span class="nv">$yellow</span><span class="p">:</span> <span class="mh">#ffcc00</span><span class="p">;</span>
-<span class="nv">$forest-green</span><span class="p">:</span> <span class="mh">#666600</span><span class="p">;</span>
-<span class="nv">$green</span><span class="p">:</span> <span class="mh">#51b848</span><span class="p">;</span>
-<span class="nv">$teal</span><span class="p">:</span> <span class="mh">#006666</span><span class="p">;</span>
-<span class="nv">$blue</span><span class="p">:</span> <span class="mh">#0090cb</span><span class="p">;</span>
-<span class="nv">$cyan</span><span class="p">:</span> <span class="mh">#00ccff</span><span class="p">;</span>
-<span class="nv">$dark-cyan</span><span class="p">:</span> <span class="nf">darken</span><span class="p">(</span><span class="nv">$cyan</span><span class="o">,</span> <span class="m">10%</span><span class="p">);</span>
-<span class="nv">$indigo</span><span class="p">:</span> <span class="mh">#2a1e5c</span><span class="p">;</span>
-<span class="nv">$purple</span><span class="p">:</span> <span class="mh">#66439a</span><span class="p">;</span>
-<span class="nv">$yellow-green</span><span class="p">:</span> <span class="mh">#efe80c</span><span class="p">;</span>
-<span class="nv">$red-orange</span><span class="p">:</span> <span class="mh">#ff3600</span><span class="p">;</span>
-<span class="nv">$tan</span><span class="p">:</span> <span class="mh">#F2F1E6</span><span class="p">;</span>
-<span class="nv">$dark-tan</span><span class="p">:</span> <span class="mh">#C6C7C0</span><span class="p">;</span>
-
-<span class="cm">/* These are all of our blacks, greys, and whites. */</span>
-<span class="nv">$black</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
-<span class="nv">$off-black</span><span class="p">:</span> <span class="mh">#111</span><span class="p">;</span>
-<span class="nv">$dark-grey</span><span class="p">:</span> <span class="mh">#666</span><span class="p">;</span>
-<span class="nv">$mid-grey</span><span class="p">:</span> <span class="mh">#aaa</span><span class="p">;</span>
-<span class="nv">$light-grey</span><span class="p">:</span> <span class="mh">#ccc</span><span class="p">;</span>
-<span class="nv">$off-white</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
-<span class="nv">$white</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
-
-<span class="cm">/* Sometimes we'll define colors for very specific uses. They should get very specific names to help assure that they're only used in the appropriate place. */</span>
-<span class="nv">$filter-background</span><span class="p">:</span> <span class="mh">#f9f4de</span><span class="p">;</span>
-<span class="nv">$filter-active-button-color</span><span class="p">:</span> <span class="mh">#eee27e</span><span class="p">;</span>
-
-<span class="cm">/* Our brand colors */</span>
-<span class="nv">$snap-blue</span><span class="p">:</span> <span class="mh">#00a9ed</span><span class="p">;</span>
-<span class="nv">$orange</span><span class="p">:</span> <span class="mh">#fe5019</span><span class="p">;</span>
-<span class="nv">$midnight</span><span class="p">:</span> <span class="mh">#002B38</span><span class="p">;</span>
-
-<span class="cm">/* If we find that we're recreating a particular color often, we should store it as a new variable, like this: */</span>
-<span class="nv">$light-blue</span><span class="p">:</span> <span class="nf">tint</span><span class="p">(</span><span class="nv">$blue</span><span class="o">,</span> <span class="m">30%</span><span class="p">);</span></code></pre></figure>
-
-<p>There are also a few functions we can use to transform colors to other colors.</p>
-
-<h2 id="our-custom-color-functions">Our custom color functions:</h2>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Slightly lighten a color
-</span><span class="k">@function</span> <span class="nf">tint</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="nv">$percentage</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">@return</span> <span class="nf">mix</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="no">white</span><span class="o">,</span> <span class="nv">$percentage</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// Usage
-</span><span class="nc">.box</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="nf">tint</span><span class="p">(</span><span class="nv">$blue</span><span class="o">,</span> <span class="m">30</span><span class="p">);</span> <span class="c1">// mixes $blue at 30% and white at 70%
-</span><span class="p">}</span>
-
-<span class="c1">// Slightly darken a color
-</span><span class="k">@function</span> <span class="nf">shade</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="nv">$percentage</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">@return</span> <span class="nf">mix</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="no">black</span><span class="o">,</span> <span class="nv">$percentage</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// Usage
-</span><span class="nc">.button</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="nv">$blue</span><span class="p">;</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">shade</span><span class="p">(</span><span class="nv">$blue</span><span class="o">,</span> <span class="m">80</span><span class="p">);</span> <span class="c1">// mixes $blue at 80% and black at 20%
-</span><span class="p">}</span></code></pre></figure>
-
-<p>These are our preferred way to transform colors because it outputs a slightly more predictable result than the standard lighten() and darken() built into SCSS.</p>
-
-<h2 id="built-in-scss-color-functions">Built-in SCSS color functions:</h2>
-
-<ul>
-  <li>Lighten: <code class="highlighter-rouge">background: lighten($blue, 20);</code></li>
-  <li>Darken: <code class="highlighter-rouge">background: darken($orange, 60);</code></li>
-  <li>RGBA:
-    <ul>
-      <li><code class="highlighter-rouge">color: rgba($off-black, 60);</code> - useful for letting text mix onto background colors</li>
-      <li><code class="highlighter-rouge">background: rgba($white, 95);</code> - useful for making the background of an element transparent without affecting the transparency of it’s contents.</li>
-    </ul>
-  </li>
-</ul>
-
-<p>There are many more color functions, but these are the main ones we use.</p>
-
-	</div>
-
-</section>
-      </div>
-    </div>
-
-    <footer class="site-footer">
-
-  <script src="/less-css-guide/assets/js/style-guide.js"></script>
-
-</footer>
-
-
-  </body>
-
-</html>

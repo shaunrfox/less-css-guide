@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "CSS Cursor"
+title:  "Less Primer"
 date:   2016-05-20
-categories: CSS
+categories: CSS Less
 ---
 
 Coming soon...

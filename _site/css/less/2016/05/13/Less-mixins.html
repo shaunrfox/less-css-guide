@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>SCSS Primer</title>
-  <meta name="description" content="">
+  <title>Less Mixins</title>
+  <meta name="description" content="Mixins are chunks of commonly used code that can be included again and again throughout your Less. Mixins can also take a variable when they’re called.">
 
   <link rel="icon" href="/less-css-guide/assets/img/favicon.ico" type="image/x-icon" />
 	<link rel="shortcut icon" href="/less-css-guide/assets/img/favicon.ico" type="image/x-icon" />
@@ -15,7 +15,7 @@
   <script src="/less-css-guide/assets/js/jquery-2.0.3.min.js"></script>
 
   <link rel="stylesheet" href="/less-css-guide/assets/css/main.css">
-  <link rel="canonical" href="/less-css-guide/css/scss/2016/05/20/scss-primer.html">
+  <link rel="canonical" href="/less-css-guide/css/less/2016/05/13/Less-mixins.html">
   <link rel="alternate" type="application/rss+xml" title="Less CSS Guide" href="/less-css-guide/feed.xml">
 </head>
 
@@ -2014,13 +2014,13 @@
     
       <li data-filter-id="css-text-handling"><a class="page-link" href="#css-text-handling" id="link-css-text-handling">CSS Text Handling</a></li>
     
-      <li data-filter-id="SCSS-color-variables"><a class="page-link" href="#SCSS-color-variables" id="link-SCSS-color-variables">SCSS Color Variables</a></li>
+      <li data-filter-id="Less-color-variables"><a class="page-link" href="#Less-color-variables" id="link-Less-color-variables">Less Color Variables</a></li>
     
-      <li data-filter-id="SCSS-SCSS-mixins"><a class="page-link" href="#SCSS-SCSS-mixins" id="link-SCSS-SCSS-mixins">SCSS Mixins</a></li>
+      <li data-filter-id="Less-mixins"><a class="page-link" href="#Less-mixins" id="link-Less-mixins">Less Mixins</a></li>
     
-      <li data-filter-id="scss-primer"><a class="page-link" href="#scss-primer" id="link-scss-primer">SCSS Primer</a></li>
+      <li data-filter-id="Less-primer"><a class="page-link" href="#Less-primer" id="link-Less-primer">Less Primer</a></li>
     
-      <li data-filter-id="variables-in-scss"><a class="page-link" href="#variables-in-scss" id="link-variables-in-scss">Variables in SCSS</a></li>
+      <li data-filter-id="variables-in-less"><a class="page-link" href="#variables-in-less" id="link-variables-in-less">Variables in Less</a></li>
     
 	</ul>
 </nav>
@@ -2038,7 +2038,55 @@
 	</header>
 
 	<div class="post-content">
-		
+		<p>Mixins are chunks of commonly used code that can be included again and again throughout your Less. Mixins can also take a variable when they’re called.</p>
+
+<figure class="highlight"><pre><code class="language-less" data-lang="less">// Truncate text
+.truncate() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// Used on parent elements with floating child elements to force the parent to expand to the height of their children.
+.clearfix() {
+  &amp;::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Force a background image to always fit within it's container
+.background-image() {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+// Vertically align most things
+.vertical-align() {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}</code></pre></figure>
+
+<h3 id="usage">Usage</h3>
+
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  .vertical-align();
+  .truncate();
+}</code></pre></figure>
+
+<h3 id="outputs-to">Outputs to:</h3>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">);</span>
+  <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
+  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 	</div>
 

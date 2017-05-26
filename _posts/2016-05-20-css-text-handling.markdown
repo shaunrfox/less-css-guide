@@ -9,58 +9,35 @@ categories: CSS
 
 ##### EXAMPLE VALUES: Depends on your project.
 
-To set what font gets used, use the `font-family` property. In most of our projects this is done for you in our base css.
+To set what font gets used, use the `font-family` property. This is set globally for our products.
 
-However, if you want to change what font is used, you should have numerous fallbacks like.
+However, if you want to change what font is used, you should have numerous fallbacks like this:
 
 {% highlight scss %}
 .my-class {
-  font-family: "Source Sans Pro", Verdana, Helvetica, Arial, sans-serif;
+  font-family: "Roboto", Arial Narrow, Geneva, Lucida Grande, Helvetica, sans-serif;
 }
 {% endhighlight %}
 
-In this example Verdana will be used if the broswer does not have access to "Source Sans Pro", then Helvetica, etc...
-
-If you want to have them download a font, you'll want to use `@font-face`. Here's a helpful resource **TODO PROVIDE RESOURCE**
+In this example Arial Narrow will be used if the browser does not have access to "Roboto", then Geneva, etc...
 
 ---
 
 ## font-size
 
-##### EXAMPLE VALUES: `12px`, `1.2rem`, `1.4rem`, `1.6rem`
+##### EXAMPLE VALUES: `12px`
 
-`font-size` controls how big the words will appear.
-
-There are several units you can use, but we recommend pixels (`px`) and root ems (`rem`). Root ems are a percentage of the font size set on the html element.
-
-As part of our code, we have a mixin that you should use in most cases. It will take care of both rems and a pixel fallback.
-
-### usage
-
-{% highlight scss %}
-.my-class {
-  @include font-size(1.6);
-}
-{% endhighlight %}
-
-### outputs
-
-{% highlight scss %}
-.my-class {
-  font-size: 16px;
-  font-size: 1.6rem;
-}
-{% endhighlight %}
+`font-size` controls the size the text will rendered at. We stick to `px` as our decided unit.
 
 ---
 
 ## color
 
-##### EXAMPLE VALUES: `$off-black`, `#ffffff`, `tint($mid-grey, 0.7)`, `$red`, `rgba(255, 255, 255, 0.5)`
+##### EXAMPLE VALUES: `@grey-1000`, `#ffffff`, `@red-300`, `fade(@white, 50)`
 
 `color` changes the color of the text.
 
-In our code, we have variables corresponding to color values. [SCSS Color Variables](#scss-color-variables )
+In our code, we have variables corresponding to color values. [Less Color Variables](#Less-color-variables )
 
 ---
 
@@ -72,7 +49,7 @@ In our code, we have variables corresponding to color values. [SCSS Color Variab
 
 For buttons, we commonly set the line-height to the height of the button to center the text vertically within the button.
 
-{% highlight scss %}
+{% highlight less %}
 .button {
   height: 30px;
   line-height: 30px;
@@ -91,9 +68,17 @@ For buttons, we commonly set the line-height to the height of the button to cent
 
 ## font-weight
 
-##### EXAMPLE VALUES: `normal`/`400`, `semibold`/`600`, `bold`/`700`
+##### EXAMPLE VALUES: `@normal`/`400`, `@semi-bold`/`600`, `@bold`/`700`
 
-`font-weight` tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These three are the most common values we use with Source Sans Pro.
+`font-weight` tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These are the only weights we support.
+
+We've defined variables to make this easier:
+
+{% highlight less %}
+@normal: 400;
+@semi-bold: 600;
+@bold: 700;
+{% endhighlight %}
 
 ---
 
@@ -117,10 +102,10 @@ Uppercase text can be difficult to read, though, so we often pair this with `fon
 <div class="name">Shaun Fox</div>
 {% endhighlight %}
 
-{% highlight scss %}
+{% highlight less %}
 .name {
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: @semi-bold;
   letter-spacing: 1px;
 }
 {% endhighlight %}
@@ -141,7 +126,7 @@ This is typically paired with `text-transform` as demonstrated above. It should 
 
 `text-decoration` is most often used to override the default browser styling of anchor tags. Frequently we'll set the anchor to `text-decoration: none`, which removes the underline, but we'll give it other attributes that help define it as a link. For example:
 
-{% highlight scss %}
+{% highlight less %}
 .link {
   text-decoration: none;
   color: $blue;

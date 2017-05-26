@@ -51,7 +51,7 @@ In the new box-model mode (`box-sizing: border-box;`), padding will push into th
 
 `padding` can be defined on four sides of an element, like many things: top, right, bottom, left. This can be done as a shorthand or as individual values.
 
-{% highlight scss %}
+{% highlight less %}
 .my-class {
   padding: 10px 20px 30px 0;
   /* top: 10px, right: 20px, bottom: 30px, left: 0 */
@@ -75,7 +75,7 @@ In the new box-model mode (`box-sizing: border-box;`), padding will push into th
 
 A common trick for horizontally centering an element inside a larger parent is to set `margin: 0 auto;`. The `0` defines the top and bottom margin (a shorthand), and the `auto` defines the right and left. It should be noted that this only works if the element also has a width set.
 
-{% highlight scss %}
+{% highlight less %}
 .parent-element {
   width: 100%;
   height: 100%;
@@ -92,22 +92,22 @@ A common trick for horizontally centering an element inside a larger parent is t
 
 ## border
 
-##### EXAMPLE VALUES: `1px solid $light-grey`
+##### EXAMPLE VALUES: `1px solid @grey-300`
 
 `border` is defined similar to padding and can be treated nearly the same. It can be defined on all sides at once or as individual attributes.
 
 We most commonly use the shorthand definitions listed below, but they can also be broken out on their own. The second example is also a common way we use it, defining multiple values as shorthand, but then overriding specific ones for an interaction or emphasis.
 
-{% highlight scss %}
+{% highlight less %}
 .element {
-  border: 1px solid $light-grey;
+  border: 1px solid @grey-300;
 }
 
 .other-element {
-  border-bottom: 1px solid $white;
+  border-bottom: 1px solid @white;
 
   &:hover {
-    border-color: $blue;
+    border-color: @blue-500;
   }
 }
 {% endhighlight %}

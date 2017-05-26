@@ -33,16 +33,16 @@ The position property manipulates the location of an element. Each value of this
 
 These properties are used in conjunction with `relative`, `absolute`, or `fixed` positioning.
 
-{% highlight scss %}
+{% highlight less %}
 .parent-element {
   position: relative;
 }
 
 .child-element {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-	// 20px from the top, left corner of it's parent, regardless of padding or other sibling elements.
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  // 20px from the top, left corner of it's parent, regardless of padding or other sibling elements.
 }
 {% endhighlight %}
 
@@ -62,7 +62,7 @@ Be both conscious and sensible with your z-index values. Avoid tacking on lots o
 
 ##### EXAMPLE VALUES: `left`, `right`, `none`
 
-`float` is usually used when you want two or more block elements to be side-by-side. It's easiest to see in a visual example: <http://codepen.io/bxyoung89/pen/WbLRve>
+`float` is usually used when you want two or more block elements to be side-by-side. It's easiest to see in a visual example: <https://codepen.io/bxyoung89/full/WbLRve/>
 
 ### clear
 
@@ -78,7 +78,7 @@ You should use our handy mixin: `@include clearfix();`
 
 You can do a lot of things with transform, but usually we only use it for vertical centering. You should be careful with this property because it does not necessarily respect round pixel values and can cause things to become blurry.
 
-Our mixin: `@include vertical-align();` will vertically center a block element with unknown height inside a parent that's larger (most of the time). (not to be confused with the `vertical-align` property)
+Our mixin: `.vertical-align();` will vertically center a block element with unknown height inside a parent that's larger (most of the time). (not to be confused with the `vertical-align` property)
 
 More info here: <https://css-tricks.com/centering-css-complete-guide/>
 

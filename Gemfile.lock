@@ -131,11 +131,15 @@ GEM
       mini_portile2 (~> 2.1.0)
     octokit (4.7.0)
       sawyer (~> 0.8.0, >= 0.5.3)
+    posix-spawn (0.3.13)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
     public_suffix (1.5.3)
+    pygments.rb (0.6.3)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.2.0)
     rake (10.4.2)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
@@ -164,6 +168,7 @@ GEM
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     unicode-display_width (1.2.1)
+    yajl-ruby (1.2.2)
 
 PLATFORMS
   ruby
@@ -174,6 +179,7 @@ DEPENDENCIES
   guard-jekyll-plus (~> 2.0.0)
   guard-rake (~> 1.0.0)
   less (~> 2.6.0)
+  pygments.rb (~> 0.6.3)
   rake (~> 10.4.2)
   therubyracer (~> 0.12.1)
 

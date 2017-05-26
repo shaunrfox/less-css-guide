@@ -2015,13 +2015,13 @@
     
       <li data-filter-id="css-text-handling"><a class="page-link" href="#css-text-handling" id="link-css-text-handling">CSS Text Handling</a></li>
     
-      <li data-filter-id="SCSS-color-variables"><a class="page-link" href="#SCSS-color-variables" id="link-SCSS-color-variables">SCSS Color Variables</a></li>
+      <li data-filter-id="Less-color-variables"><a class="page-link" href="#Less-color-variables" id="link-Less-color-variables">Less Color Variables</a></li>
     
-      <li data-filter-id="SCSS-SCSS-mixins"><a class="page-link" href="#SCSS-SCSS-mixins" id="link-SCSS-SCSS-mixins">SCSS Mixins</a></li>
+      <li data-filter-id="Less-mixins"><a class="page-link" href="#Less-mixins" id="link-Less-mixins">Less Mixins</a></li>
     
-      <li data-filter-id="scss-primer"><a class="page-link" href="#scss-primer" id="link-scss-primer">SCSS Primer</a></li>
+      <li data-filter-id="Less-primer"><a class="page-link" href="#Less-primer" id="link-Less-primer">Less Primer</a></li>
     
-      <li data-filter-id="variables-in-scss"><a class="page-link" href="#variables-in-scss" id="link-variables-in-scss">Variables in SCSS</a></li>
+      <li data-filter-id="variables-in-less"><a class="page-link" href="#variables-in-less" id="link-variables-in-less">Variables in Less</a></li>
     
 	</ul>
 </nav>
@@ -2058,13 +2058,13 @@
     </div>
 
     <div class="post-content">
-      <p>background, background-color, background-image, background-position, background-repeat, background-size</p>
+      <h5 id="background-background-color-background-image-background-position-background-repeat-background-size">background, background-color, background-image, background-position, background-repeat, background-size</h5>
 
 <p><code class="highlighter-rouge">background</code> is one of the most common properties we set. It can be used shorthand or broken out into more specific properties.</p>
 
 <h2 id="set-a-background-color">Set a background color</h2>
 
-<p>When setting a background color, use <code class="highlighter-rouge">background: $light-grey</code>. Even when overriding for something like a hover state, still just use <code class="highlighter-rouge">background</code>, rather than <code class="highlighter-rouge">background-color</code>.</p>
+<p>When setting a background color, you can use either <code class="highlighter-rouge">background: @grey-100;</code> or <code class="highlighter-rouge">background-color: @grey-100;</code>.</p>
 
 <hr />
 
@@ -2074,18 +2074,18 @@
 
 <h3 id="example">Example</h3>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Here's the mixin
-</span><span class="k">@mixin</span> <span class="nf">background-image</span><span class="p">(){</span>
-  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
-  <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
-  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">center</span> <span class="nb">center</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">// Here's the mixin
+.background-image() {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
 
-<span class="c1">// Here's how to use it
-</span><span class="nc">.element</span> <span class="p">{</span>
-  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('.../image.jpg')</span><span class="p">;</span>
-  <span class="k">@include</span> <span class="nd">background-image</span><span class="p">();</span>
-<span class="p">}</span></code></pre></figure>
+// Here's how to use it
+.element {
+  background-image: url('.../image.jpg');
+  .background-image();
+}</code></pre></figure>
 
 <p>Using this method, you can also set a fallback image by having multiple values in the <code class="highlighter-rouge">background-image</code>. This is helpful when you’re not hosting the source of the image you want to set.</p>
 
@@ -2093,7 +2093,7 @@
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
   <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('http://twitter.com/.../avatar.jpg')</span><span class="o">,</span> <span class="sx">url('.../backup-image.jpg')</span><span class="p">;</span>
-  <span class="k">@include</span> <span class="nd">background-image</span><span class="p">();</span>
+  <span class="nc">.background-image</span><span class="o">()</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <hr />
@@ -2102,7 +2102,13 @@
 
 <p><code class="highlighter-rouge">background-size: cover</code> will stretch the image to cover the entire element, no matter the proportions, but it will keep the image’s original aspect ratio.</p>
 
-<p><code class="highlighter-rouge">background-size: contain</code> will constrain the image to fit within the bounds of the element, but will always keep the entire image visible.</p>
+<p><code class="highlighter-rouge">background-size: contain</code> will constrain the image to fit within the bounds of the element, but will always keep the entire image visible (still maintaining aspect ratio).</p>
+
+<hr />
+
+<h2 id="background-position-and-background-repeat">background-position and background-repeat</h2>
+
+<p>Both of these are typically used alongside a background-image. <code class="highlighter-rouge">background-position</code> sets the position of the background image, relative to it’s element. <code class="highlighter-rouge">background-repeat</code> controls how your image repeats in the container (images repeat infinitely in both directions by default!);</p>
 
     </div>
 
@@ -2167,17 +2173,17 @@
 
 <p><code class="highlighter-rouge">padding</code> can be defined on four sides of an element, like many things: top, right, bottom, left. This can be done as a shorthand or as individual values.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span> <span class="m">30px</span> <span class="m">0</span><span class="p">;</span>
-  <span class="cm">/* top: 10px, right: 20px, bottom: 30px, left: 0 */</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.my-class {
+  padding: 10px 20px 30px 0;
+  /* top: 10px, right: 20px, bottom: 30px, left: 0 */
+}
 
-<span class="c1">// or
-</span>
-<span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="nl">padding-top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+// or
+
+.my-class {
+  padding-top: 20px;
+  padding-left: 40px;
+}</code></pre></figure>
 
 <hr />
 
@@ -2189,38 +2195,38 @@
 
 <p>A common trick for horizontally centering an element inside a larger parent is to set <code class="highlighter-rouge">margin: 0 auto;</code>. The <code class="highlighter-rouge">0</code> defines the top and bottom margin (a shorthand), and the <code class="highlighter-rouge">auto</code> defines the right and left. It should be noted that this only works if the element also has a width set.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.parent-element</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.parent-element {
+  width: 100%;
+  height: 100%;
+}
 
-<span class="nc">.child-element</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+.child-element {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+}</code></pre></figure>
 
 <hr />
 
 <h2 id="border">border</h2>
 
-<h5 id="example-values-1px-solid-light-grey">EXAMPLE VALUES: <code class="highlighter-rouge">1px solid $light-grey</code></h5>
+<h5 id="example-values-1px-solid-grey-300">EXAMPLE VALUES: <code class="highlighter-rouge">1px solid @grey-300</code></h5>
 
 <p><code class="highlighter-rouge">border</code> is defined similar to padding and can be treated nearly the same. It can be defined on all sides at once or as individual attributes.</p>
 
 <p>We most commonly use the shorthand definitions listed below, but they can also be broken out on their own. The second example is also a common way we use it, defining multiple values as shorthand, but then overriding specific ones for an interaction or emphasis.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$light-grey</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.element {
+  border: 1px solid @grey-300;
+}
 
-<span class="nc">.other-element</span> <span class="p">{</span>
-  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$white</span><span class="p">;</span>
+.other-element {
+  border-bottom: 1px solid @white;
 
-  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nv">$blue</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  &amp;:hover {
+    border-color: @blue-500;
+  }
+}</code></pre></figure>
 
 <hr />
 
@@ -2249,7 +2255,7 @@
     </div>
 
     <div class="post-content">
-      
+      <p>Coming soon…</p>
 
     </div>
 
@@ -2268,7 +2274,7 @@
     </div>
 
     <div class="post-content">
-      
+      <p>Coming soon…</p>
 
     </div>
 
@@ -2380,16 +2386,16 @@
 
 <p>These properties are used in conjunction with <code class="highlighter-rouge">relative</code>, <code class="highlighter-rouge">absolute</code>, or <code class="highlighter-rouge">fixed</code> positioning.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.parent-element</span> <span class="p">{</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.parent-element {
+  position: relative;
+}
 
-<span class="nc">.child-element</span> <span class="p">{</span>
-	<span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-	<span class="nl">top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-	<span class="nl">left</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-	<span class="c1">// 20px from the top, left corner of it's parent, regardless of padding or other sibling elements.
-</span><span class="p">}</span></code></pre></figure>
+.child-element {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  // 20px from the top, left corner of it's parent, regardless of padding or other sibling elements.
+}</code></pre></figure>
 
 <hr />
 
@@ -2409,7 +2415,7 @@
 
 <h5 id="example-values-left-right-none">EXAMPLE VALUES: <code class="highlighter-rouge">left</code>, <code class="highlighter-rouge">right</code>, <code class="highlighter-rouge">none</code></h5>
 
-<p><code class="highlighter-rouge">float</code> is usually used when you want two or more block elements to be side-by-side. It’s easiest to see in a visual example: <a href="http://codepen.io/bxyoung89/pen/WbLRve">http://codepen.io/bxyoung89/pen/WbLRve</a></p>
+<p><code class="highlighter-rouge">float</code> is usually used when you want two or more block elements to be side-by-side. It’s easiest to see in a visual example: <a href="https://codepen.io/bxyoung89/full/WbLRve/">https://codepen.io/bxyoung89/full/WbLRve/</a></p>
 
 <h3 id="clear">clear</h3>
 
@@ -2425,7 +2431,7 @@
 
 <p>You can do a lot of things with transform, but usually we only use it for vertical centering. You should be careful with this property because it does not necessarily respect round pixel values and can cause things to become blurry.</p>
 
-<p>Our mixin: <code class="highlighter-rouge">@include vertical-align();</code> will vertically center a block element with unknown height inside a parent that’s larger (most of the time). (not to be confused with the <code class="highlighter-rouge">vertical-align</code> property)</p>
+<p>Our mixin: <code class="highlighter-rouge">.vertical-align();</code> will vertically center a block element with unknown height inside a parent that’s larger (most of the time). (not to be confused with the <code class="highlighter-rouge">vertical-align</code> property)</p>
 
 <p>More info here: <a href="https://css-tricks.com/centering-css-complete-guide/">https://css-tricks.com/centering-css-complete-guide/</a></p>
 
@@ -2452,7 +2458,7 @@
     </div>
 
     <div class="post-content">
-      
+      <p>Coming soon…</p>
 
     </div>
 
@@ -2471,7 +2477,7 @@
     </div>
 
     <div class="post-content">
-      
+      <p>Coming soon…</p>
 
     </div>
 
@@ -2594,34 +2600,34 @@
 
 <p>This is used to make a small arrow that points to another element. We typically use this for special tooltips or dropdowns. You can see this more easily in the <a href="http://codepen.io/shaunrfox/pen/mENJjv?editors=1100">Codepen Example</a>.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.parent-element</span> <span class="p">{</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-  <span class="c1">// Must set position for the carrot to work
-</span>
-  <span class="k">&amp;</span><span class="nd">:before</span><span class="o">,</span>
-  <span class="k">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
-    <span class="nl">content</span><span class="p">:</span> <span class="s1">''</span><span class="p">;</span> <span class="c1">// IMPORTANT: pseudo elements will not display at all unless the content attribute is set. If you don't want any text, use the empty string.
-</span>    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-    <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
-  <span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.parent-element {
+  position: relative;
+  // Must set position for the carrot to work
 
-  <span class="k">&amp;</span><span class="nd">:before</span> <span class="p">{</span>
-    <span class="nl">top</span><span class="p">:</span> <span class="m">-12px</span><span class="p">;</span>
-    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">-12px</span><span class="p">;</span>
-    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">12px</span> <span class="nb">solid</span> <span class="nv">$light-grey</span><span class="p">;</span>
-    <span class="nl">border-right</span><span class="p">:</span> <span class="m">12px</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
-    <span class="nl">border-left</span><span class="p">:</span> <span class="m">12px</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
-  <span class="p">}</span>
+  &amp;:before,
+  &amp;:after {
+    content: ''; // IMPORTANT: pseudo elements will not display at all unless the content attribute is set. If you don't want any text, use the empty string.
+    display: block;
+    position: absolute;
+    left: 50%;
+  }
 
-  <span class="k">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
-    <span class="nl">top</span><span class="p">:</span> <span class="m">-10px</span><span class="p">;</span>
-    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">-10px</span><span class="p">;</span>
-    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="nv">$white</span><span class="p">;</span>
-    <span class="nl">border-right</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
-    <span class="nl">border-left</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  &amp;:before {
+    top: -12px;
+    margin-left: -12px;
+    border-bottom: 12px solid $light-grey;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+  }
+
+  &amp;:after {
+    top: -10px;
+    margin-left: -10px;
+    border-bottom: 10px solid $white;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+  }
+}</code></pre></figure>
 
     </div>
 
@@ -2641,6 +2647,8 @@
 
     <div class="post-content">
       <p>:hover, :active, :disabled, :first-child, :last-child, :nth-child</p>
+
+<p>Coming soon…</p>
 
     </div>
 
@@ -2737,23 +2745,23 @@
 
 <hr />
 
-<h2 id="scss">SCSS</h2>
+<h2 id="less">Less</h2>
 
-<p>This section will cover selectors in SCSS. To read more about SCSS in gerneral, see the <a href="#scss-primer">SCSS Primer</a>.</p>
+<p>This section will cover selectors in Less. To read more about Less in general, see the <a href="#Less-primer">Less Primer</a>.</p>
 
 <h3 id="nesting">nesting</h3>
 
-<p>In SCSS, you can nest selectors to logically scope rules, but this should be used cautiosly to avoid making too many overly-specific selectors when they’re compiled.</p>
+<p>In Less, you can nest selectors to logically scope rules, but this should be used cautiously to avoid making too many overly-specific selectors when they’re compiled.</p>
 
 <h5 id="nesting-example">Nesting Example:</h5>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  background: red;
 
-  <span class="nc">.header</span> <span class="p">{</span>
-    <span class="nl">background</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  .header {
+    background: blue;
+  }
+}</code></pre></figure>
 
 <h5 id="compiled">Compiled:</h5>
 
@@ -2771,13 +2779,13 @@
 
 <h5 id="ampersand-example">Ampersand Example:</h5>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  background: red;
 
-  <span class="k">&amp;</span><span class="nc">.blue</span> <span class="p">{</span>
-    <span class="nl">background</span><span class="p">:</span> <span class="no">blue</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  &amp;.blue {
+    background: blue;
+  }
+}</code></pre></figure>
 
 <h5 id="compiled-1">Compiled:</h5>
 
@@ -2793,27 +2801,27 @@
 
 <h2 id="browser-prefixes">browser prefixes</h2>
 
-<p>Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implememnted before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: <code class="highlighter-rouge">-webkit</code>, <code class="highlighter-rouge">-ms</code>, <code class="highlighter-rouge">-moz</code>, <code class="highlighter-rouge">-o</code>. This can be a hge hastle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.</p>
+<p>Due to the rapidly evolving state of the web, some browsers implement features faster than others. Usually when a feature is implemented before it makes it into the official CSS specification, browsers will allow a prefixed version of the property. The most common prefixes are: <code class="highlighter-rouge">-webkit</code>, <code class="highlighter-rouge">-ms</code>, <code class="highlighter-rouge">-moz</code>, <code class="highlighter-rouge">-o</code>. This can be a huge hassle to maintain. We highly recommend using an auto-prefixer to solve this issue. Google it.</p>
 
 <hr />
 
 <h2 id="media-queries">@media Queries</h2>
 
-<p>In the new era of Responsive Web Design, things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.</p>
+<p>In the new era of <a href="https://alistapart.com/article/responsive-web-design">Responsive Web Design</a>, things on the web should be built to work on a variety of screen sizes. The first tactic to accomplish this is to use percentage-based dimensions. Where the layout needs to adjust or elements need to change size, you should use @media Queries to introduce new styling.</p>
 
 <h5 id="example-1">Example:</h5>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="c1">// in a grid, two across
-</span>  <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  // in a grid, two across
+  display: inline-block;
+  width: 50%;
 
-  <span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="o">:</span> <span class="m">600px</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// at 600px or less, it becomes a list
-</span>    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  @media (max-width: 600px) {
+    // at 600px or less, it becomes a list
+    display: block;
+    width: 100%;
+  }
+}</code></pre></figure>
 
 <hr />
 
@@ -2821,11 +2829,11 @@
 
 <h3 id="selecting-ids">Selecting IDs</h3>
 
-<p>IDs, when used properly, are unique and only used once. Targetting IDs, therefore, is inefficient and does not promote DRY code.</p>
+<p>IDs, when used properly, are unique and only used once. Targeting IDs, therefore, is inefficient and does not promote DRY code.</p>
 
-<h3 id="lots-of-nesting-in-scss">Lots of nesting in SCSS</h3>
+<h3 id="lots-of-nesting-in-less">Lots of nesting in Less</h3>
 
-<p>Too much nesting in SCSS creates overly specific selectors, leading to poor performance and not reusable code.</p>
+<p>Too much nesting in Less creates overly specific selectors, leading to poor performance and not reusable code.</p>
 
 <h3 id="important">!important</h3>
 
@@ -2833,7 +2841,7 @@
 
 <h3 id="selecting-">Selecting <code class="highlighter-rouge">*</code></h3>
 
-<p><code class="highlighter-rouge">*</code> will select EVERYTHING. We only use it once, to define the box-model. In general, there are not many other reasons to select all and it can become very computationally intensive.</p>
+<p><code class="highlighter-rouge">*</code> will select EVERYTHING. We use it for very specific applications because it’s so darned powerful. In general, there are not many reasons to select all and it can become very computationally intensive.</p>
 
     </div>
 
@@ -2856,52 +2864,33 @@
 
 <h5 id="example-values-depends-on-your-project">EXAMPLE VALUES: Depends on your project.</h5>
 
-<p>To set what font gets used, use the <code class="highlighter-rouge">font-family</code> property. In most of our projects this is done for you in our base css.</p>
+<p>To set what font gets used, use the <code class="highlighter-rouge">font-family</code> property. This is set globally for our products.</p>
 
-<p>However, if you want to change what font is used, you should have numerous fallbacks like.</p>
+<p>However, if you want to change what font is used, you should have numerous fallbacks like this:</p>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Source Sans Pro"</span><span class="o">,</span> <span class="n">Verdana</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">"Roboto"</span><span class="o">,</span> <span class="n">Arial</span> <span class="n">Narrow</span><span class="o">,</span> <span class="n">Geneva</span><span class="o">,</span> <span class="n">Lucida</span> <span class="n">Grande</span><span class="o">,</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>In this example Verdana will be used if the broswer does not have access to “Source Sans Pro”, then Helvetica, etc…</p>
-
-<p>If you want to have them download a font, you’ll want to use <code class="highlighter-rouge">@font-face</code>. Here’s a helpful resource <strong>TODO PROVIDE RESOURCE</strong></p>
+<p>In this example Arial Narrow will be used if the browser does not have access to “Roboto”, then Geneva, etc…</p>
 
 <hr />
 
 <h2 id="font-size">font-size</h2>
 
-<h5 id="example-values-12px-12rem-14rem-16rem">EXAMPLE VALUES: <code class="highlighter-rouge">12px</code>, <code class="highlighter-rouge">1.2rem</code>, <code class="highlighter-rouge">1.4rem</code>, <code class="highlighter-rouge">1.6rem</code></h5>
+<h5 id="example-values-12px">EXAMPLE VALUES: <code class="highlighter-rouge">12px</code></h5>
 
-<p><code class="highlighter-rouge">font-size</code> controls how big the words will appear.</p>
-
-<p>There are several units you can use, but we recommend pixels (<code class="highlighter-rouge">px</code>) and root ems (<code class="highlighter-rouge">rem</code>). Root ems are a percentage of the font size set on the html element.</p>
-
-<p>As part of our code, we have a mixin that you should use in most cases. It will take care of both rems and a pixel fallback.</p>
-
-<h3 id="usage">usage</h3>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="k">@include</span> <span class="nd">font-size</span><span class="p">(</span><span class="m">1</span><span class="mi">.6</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
-<h3 id="outputs">outputs</h3>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">16px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="mi">.6rem</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<p><code class="highlighter-rouge">font-size</code> controls the size the text will rendered at. We stick to <code class="highlighter-rouge">px</code> as our decided unit.</p>
 
 <hr />
 
 <h2 id="color">color</h2>
 
-<h5 id="example-values-off-black-ffffff-tintmid-grey-07-red-rgba255-255-255-05">EXAMPLE VALUES: <code class="highlighter-rouge">$off-black</code>, <code class="highlighter-rouge">#ffffff</code>, <code class="highlighter-rouge">tint($mid-grey, 0.7)</code>, <code class="highlighter-rouge">$red</code>, <code class="highlighter-rouge">rgba(255, 255, 255, 0.5)</code></h5>
+<h5 id="example-values-grey-1000-ffffff-red-300-fadewhite-50">EXAMPLE VALUES: <code class="highlighter-rouge">@grey-1000</code>, <code class="highlighter-rouge">#ffffff</code>, <code class="highlighter-rouge">@red-300</code>, <code class="highlighter-rouge">fade(@white, 50)</code></h5>
 
 <p><code class="highlighter-rouge">color</code> changes the color of the text.</p>
 
-<p>In our code, we have variables corresponding to color values. <a href="#scss-color-variables">SCSS Color Variables</a></p>
+<p>In our code, we have variables corresponding to color values. <a href="#Less-color-variables">Less Color Variables</a></p>
 
 <hr />
 
@@ -2913,10 +2902,10 @@
 
 <p>For buttons, we commonly set the line-height to the height of the button to center the text vertically within the button.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.button</span> <span class="p">{</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
-  <span class="nl">line-height</span><span class="p">:</span> <span class="m">30px</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.button {
+  height: 30px;
+  line-height: 30px;
+}</code></pre></figure>
 
 <hr />
 
@@ -2930,9 +2919,15 @@
 
 <h2 id="font-weight">font-weight</h2>
 
-<h5 id="example-values-normal400-semibold600-bold700">EXAMPLE VALUES: <code class="highlighter-rouge">normal</code>/<code class="highlighter-rouge">400</code>, <code class="highlighter-rouge">semibold</code>/<code class="highlighter-rouge">600</code>, <code class="highlighter-rouge">bold</code>/<code class="highlighter-rouge">700</code></h5>
+<h5 id="example-values-normal400-semi-bold600-bold700">EXAMPLE VALUES: <code class="highlighter-rouge">@normal</code>/<code class="highlighter-rouge">400</code>, <code class="highlighter-rouge">@semi-bold</code>/<code class="highlighter-rouge">600</code>, <code class="highlighter-rouge">@bold</code>/<code class="highlighter-rouge">700</code></h5>
 
-<p><code class="highlighter-rouge">font-weight</code> tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These three are the most common values we use with Source Sans Pro.</p>
+<p><code class="highlighter-rouge">font-weight</code> tells the browser which cut of the given font you want to deliver to the browser. The numbers shown above generally correspond directly to the named weights beside them, though some font makers use different systems. These are the only weights we support.</p>
+
+<p>We’ve defined variables to make this easier:</p>
+
+<figure class="highlight"><pre><code class="language-less" data-lang="less">@normal: 400;
+@semi-bold: 600;
+@bold: 700;</code></pre></figure>
 
 <hr />
 
@@ -2954,11 +2949,11 @@
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"name"</span><span class="nt">&gt;</span>Shaun Fox<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.name</span> <span class="p">{</span>
-  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
-  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.name {
+  text-transform: uppercase;
+  font-weight: @semi-bold;
+  letter-spacing: 1px;
+}</code></pre></figure>
 
 <hr />
 
@@ -2976,14 +2971,14 @@
 
 <p><code class="highlighter-rouge">text-decoration</code> is most often used to override the default browser styling of anchor tags. Frequently we’ll set the anchor to <code class="highlighter-rouge">text-decoration: none</code>, which removes the underline, but we’ll give it other attributes that help define it as a link. For example:</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.link</span> <span class="p">{</span>
-  <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="nv">$blue</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.link {
+  text-decoration: none;
+  color: $blue;
 
-  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
-  	<span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$blue</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  &amp;:hover {
+  	border-bottom: 1px solid $blue;
+  }
+}</code></pre></figure>
 
 <hr />
 
@@ -2997,10 +2992,10 @@
 
   </section>
 
-  <section id="SCSS-color-variables" class="post" data-filter-id="SCSS-color-variables">
+  <section id="Less-color-variables" class="post" data-filter-id="Less-color-variables">
     <header class="post-title">
-      <a class="post-title-hash" href="#SCSS-color-variables">#</a>
-      <h2>SCSS Color Variables</h2>
+      <a class="post-title-hash" href="#Less-color-variables">#</a>
+      <h2>Less Color Variables</h2>
     </header>
 
     <div class="meta">
@@ -3012,242 +3007,177 @@
     </div>
 
     <div class="post-content">
-      <p>Our color variables, defined in <code class="highlighter-rouge">_colors.scss</code>, are designed to help us reuse colors without having to remember hex values.</p>
+      <p>Our color variables, defined in <code class="highlighter-rouge">_colors.less</code>, are designed to help us reuse colors without having to remember hex values.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="cm">/* This is a default set of utility colors that we use from time to time. */</span>
-<span class="nv">$red</span><span class="p">:</span> <span class="mh">#ed1c24</span><span class="p">;</span>
-<span class="nv">$orange</span><span class="p">:</span> <span class="mh">#ff6600</span><span class="p">;</span>
-<span class="nv">$yellow</span><span class="p">:</span> <span class="mh">#ffcc00</span><span class="p">;</span>
-<span class="nv">$forest-green</span><span class="p">:</span> <span class="mh">#666600</span><span class="p">;</span>
-<span class="nv">$green</span><span class="p">:</span> <span class="mh">#51b848</span><span class="p">;</span>
-<span class="nv">$teal</span><span class="p">:</span> <span class="mh">#006666</span><span class="p">;</span>
-<span class="nv">$blue</span><span class="p">:</span> <span class="mh">#0090cb</span><span class="p">;</span>
-<span class="nv">$cyan</span><span class="p">:</span> <span class="mh">#00ccff</span><span class="p">;</span>
-<span class="nv">$dark-cyan</span><span class="p">:</span> <span class="nf">darken</span><span class="p">(</span><span class="nv">$cyan</span><span class="o">,</span> <span class="m">10%</span><span class="p">);</span>
-<span class="nv">$indigo</span><span class="p">:</span> <span class="mh">#2a1e5c</span><span class="p">;</span>
-<span class="nv">$purple</span><span class="p">:</span> <span class="mh">#66439a</span><span class="p">;</span>
-<span class="nv">$yellow-green</span><span class="p">:</span> <span class="mh">#efe80c</span><span class="p">;</span>
-<span class="nv">$red-orange</span><span class="p">:</span> <span class="mh">#ff3600</span><span class="p">;</span>
-<span class="nv">$tan</span><span class="p">:</span> <span class="mh">#F2F1E6</span><span class="p">;</span>
-<span class="nv">$dark-tan</span><span class="p">:</span> <span class="mh">#C6C7C0</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">/* This is an example of some of our default colors. */
+@cool-grey-300: #D8E2E7;
+@green-400: #97E34F;
+@olive-700: #68721F;
+@red-200: #FFE9E3;
 
-<span class="cm">/* These are all of our blacks, greys, and whites. */</span>
-<span class="nv">$black</span><span class="p">:</span> <span class="mh">#000</span><span class="p">;</span>
-<span class="nv">$off-black</span><span class="p">:</span> <span class="mh">#111</span><span class="p">;</span>
-<span class="nv">$dark-grey</span><span class="p">:</span> <span class="mh">#666</span><span class="p">;</span>
-<span class="nv">$mid-grey</span><span class="p">:</span> <span class="mh">#aaa</span><span class="p">;</span>
-<span class="nv">$light-grey</span><span class="p">:</span> <span class="mh">#ccc</span><span class="p">;</span>
-<span class="nv">$off-white</span><span class="p">:</span> <span class="mh">#eee</span><span class="p">;</span>
-<span class="nv">$white</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+/* We also have some specific Carrier colors defined. */
+@fedexCA: #9f4a8a;
+@CAPost: #4a9f96;
+@dhlExpress: #9f724a;</code></pre></figure>
 
-<span class="cm">/* Sometimes we'll define colors for very specific uses. They should get very specific names to help assure that they're only used in the appropriate place. */</span>
-<span class="nv">$filter-background</span><span class="p">:</span> <span class="mh">#f9f4de</span><span class="p">;</span>
-<span class="nv">$filter-active-button-color</span><span class="p">:</span> <span class="mh">#eee27e</span><span class="p">;</span>
+<p>There are also a few built-in functions we can use to transform colors to other colors in Less. We try to avoid transforming the colors, except for using <code class="highlighter-rouge">fade()</code> to give them some transparency.</p>
 
-<span class="cm">/* Our brand colors */</span>
-<span class="nv">$snap-blue</span><span class="p">:</span> <span class="mh">#00a9ed</span><span class="p">;</span>
-<span class="nv">$orange</span><span class="p">:</span> <span class="mh">#fe5019</span><span class="p">;</span>
-<span class="nv">$midnight</span><span class="p">:</span> <span class="mh">#002B38</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">// Slightly darken a color
+darken()
 
-<span class="cm">/* If we find that we're recreating a particular color often, we should store it as a new variable, like this: */</span>
-<span class="nv">$light-blue</span><span class="p">:</span> <span class="nf">tint</span><span class="p">(</span><span class="nv">$blue</span><span class="o">,</span> <span class="m">30%</span><span class="p">);</span></code></pre></figure>
+// Slightly lighten a color
+lighten()
 
-<p>There are also a few functions we can use to transform colors to other colors.</p>
+// Convert to rgba
+fade()</code></pre></figure>
 
-<h2 id="our-custom-color-functions">Our custom color functions:</h2>
+<h3 id="usage">Usage</h3>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Slightly lighten a color
-</span><span class="k">@function</span> <span class="nf">tint</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="nv">$percentage</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">@return</span> <span class="nf">mix</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="no">white</span><span class="o">,</span> <span class="nv">$percentage</span><span class="p">);</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  background: fade(@yellow-300, 20);
+}</code></pre></figure>
 
-<span class="c1">// Usage
-</span><span class="nc">.box</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="nf">tint</span><span class="p">(</span><span class="nv">$blue</span><span class="o">,</span> <span class="m">30</span><span class="p">);</span> <span class="c1">// mixes $blue at 30% and white at 70%
-</span><span class="p">}</span>
+<h3 id="outputs-to">Outputs to:</h3>
 
-<span class="c1">// Slightly darken a color
-</span><span class="k">@function</span> <span class="nf">shade</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="nv">$percentage</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">@return</span> <span class="nf">mix</span><span class="p">(</span><span class="nv">$color</span><span class="o">,</span> <span class="no">black</span><span class="o">,</span> <span class="nv">$percentage</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// Usage
-</span><span class="nc">.button</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="nv">$blue</span><span class="p">;</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nf">shade</span><span class="p">(</span><span class="nv">$blue</span><span class="o">,</span> <span class="m">80</span><span class="p">);</span> <span class="c1">// mixes $blue at 80% and black at 20%
-</span><span class="p">}</span></code></pre></figure>
-
-<p>These are our preferred way to transform colors because it outputs a slightly more predictable result than the standard lighten() and darken() built into SCSS.</p>
-
-<h2 id="built-in-scss-color-functions">Built-in SCSS color functions:</h2>
-
-<ul>
-  <li>Lighten: <code class="highlighter-rouge">background: lighten($blue, 20);</code></li>
-  <li>Darken: <code class="highlighter-rouge">background: darken($orange, 60);</code></li>
-  <li>RGBA:
-    <ul>
-      <li><code class="highlighter-rouge">color: rgba($off-black, 60);</code> - useful for letting text mix onto background colors</li>
-      <li><code class="highlighter-rouge">background: rgba($white, 95);</code> - useful for making the background of an element transparent without affecting the transparency of it’s contents.</li>
-    </ul>
-  </li>
-</ul>
-
-<p>There are many more color functions, but these are the main ones we use.</p>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  background: rgba(255, 244, 29, 0.2);
+}</code></pre></figure>
 
     </div>
 
   </section>
 
-  <section id="SCSS-SCSS-mixins" class="post" data-filter-id="SCSS-SCSS-mixins">
+  <section id="Less-mixins" class="post" data-filter-id="Less-mixins">
     <header class="post-title">
-      <a class="post-title-hash" href="#SCSS-SCSS-mixins">#</a>
-      <h2>SCSS Mixins</h2>
+      <a class="post-title-hash" href="#Less-mixins">#</a>
+      <h2>Less Mixins</h2>
     </header>
 
     <div class="meta">
       
         <div class="category">CSS</div>
       
-        <div class="category">SCSS</div>
+        <div class="category">Less</div>
       
     </div>
 
     <div class="post-content">
-      <p>Mixins are chunks of commonly used code that can be included again and again throughout your SCSS. Mixins can also take a variable when they’re called.</p>
+      <p>Mixins are chunks of commonly used code that can be included again and again throughout your Less. Mixins can also take a variable when they’re called.</p>
 
-<p>This snippet is used on parent elements with floating child elements to force them to wrap around their children.</p>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">// Truncate text
+.truncate() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">clearfix</span> <span class="p">{</span>
-  <span class="err">&amp;</span><span class="p">:</span><span class="o">:</span><span class="n">after</span> <span class="p">{</span>
-    <span class="nl">content</span><span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
-    <span class="nl">display</span><span class="p">:</span> <span class="n">table</span><span class="p">;</span>
-    <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+// Used on parent elements with floating child elements to force the parent to expand to the height of their children.
+.clearfix() {
+  &amp;::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
 
-<p>This snippet is used to generate REM-based font sizes with a PX backup. Note that it takes a variable ($size) and does some math with the value it’s given.</p>
+// Force a background image to always fit within it's container
+.background-image() {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@mixin</span> <span class="nf">font-size</span><span class="p">(</span><span class="nv">$size</span><span class="p">){</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="p">(</span><span class="nv">$size</span> <span class="o">*</span> <span class="m">10</span><span class="p">)</span> <span class="o">+</span> <span class="nb">px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="nv">$size</span> <span class="o">+</span> <span class="n">rem</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>More snippets that are used extensively:</p>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="c1">// Uppercase, 600, letter-spaced
-</span><span class="k">@mixin</span> <span class="nf">uppercase</span> <span class="p">{</span>
-  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
-  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Truncate text
-</span><span class="k">@mixin</span> <span class="nf">truncate</span> <span class="p">{</span>
-  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
-  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
-  <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Vertical align anything
-</span><span class="k">@mixin</span> <span class="nf">vertical-align</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
-  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-  <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
-  <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">);</span>
-  <span class="nl">transform-style</span><span class="p">:</span> <span class="n">perserve-3d</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+// Vertically align most things
+.vertical-align() {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}</code></pre></figure>
 
 <h3 id="usage">Usage</h3>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="k">@include</span> <span class="nd">vertical-align</span><span class="p">();</span>
-  <span class="k">@include</span> <span class="nd">uppercase</span><span class="p">();</span>
-  <span class="k">@include</span> <span class="nd">font-size</span><span class="p">(</span><span class="m">1</span><span class="mi">.8</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.box {
+  .vertical-align();
+  .truncate();
+}</code></pre></figure>
 
 <h3 id="outputs-to">Outputs to:</h3>
 
 <figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.box</span> <span class="p">{</span>
-  <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
   <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
   <span class="nl">top</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
   <span class="nl">transform</span><span class="p">:</span> <span class="nf">translateY</span><span class="p">(</span><span class="m">-50%</span><span class="p">);</span>
-  <span class="nl">transform-style</span><span class="p">:</span> <span class="n">perserve-3d</span><span class="p">;</span>
-
-  <span class="nl">text-transform</span><span class="p">:</span> <span class="nb">uppercase</span><span class="p">;</span>
-  <span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
-  <span class="nl">letter-spacing</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
-
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">18px</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1</span><span class="mi">.8rem</span><span class="p">;</span>
+  <span class="nl">text-overflow</span><span class="p">:</span> <span class="n">ellipsis</span><span class="p">;</span>
+  <span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
     </div>
 
   </section>
 
-  <section id="scss-primer" class="post" data-filter-id="scss-primer">
+  <section id="Less-primer" class="post" data-filter-id="Less-primer">
     <header class="post-title">
-      <a class="post-title-hash" href="#scss-primer">#</a>
-      <h2>SCSS Primer</h2>
+      <a class="post-title-hash" href="#Less-primer">#</a>
+      <h2>Less Primer</h2>
     </header>
 
     <div class="meta">
       
         <div class="category">CSS</div>
       
-        <div class="category">SCSS</div>
+        <div class="category">Less</div>
       
     </div>
 
     <div class="post-content">
-      
+      <p>Coming soon…</p>
 
     </div>
 
   </section>
 
-  <section id="variables-in-scss" class="post" data-filter-id="variables-in-scss">
+  <section id="variables-in-less" class="post" data-filter-id="variables-in-less">
     <header class="post-title">
-      <a class="post-title-hash" href="#variables-in-scss">#</a>
-      <h2>Variables in SCSS</h2>
+      <a class="post-title-hash" href="#variables-in-less">#</a>
+      <h2>Variables in Less</h2>
     </header>
 
     <div class="meta">
       
         <div class="category">CSS</div>
       
-        <div class="category">SCSS</div>
+        <div class="category">Less</div>
       
     </div>
 
     <div class="post-content">
       <p>SCSS (or Sass) variables can be used for any kind of simple stored value. We most commonly use them for colors, but they can be used for lots of things.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$snap-blue</span><span class="p">:</span> <span class="mh">#00a9ed</span><span class="p">;</span>
-<span class="nv">$orange</span><span class="p">:</span> <span class="mh">#fe5019</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">@blue-500: #6FB8F8;
+@green-600: #6BA03A;
 
-<span class="nv">$filter-buttons-height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+@filter-buttons-height: 40px;
 
-<span class="nv">$global-padding</span><span class="p">:</span> <span class="m">2%</span><span class="p">;</span></code></pre></figure>
+@global-padding: 2%;</code></pre></figure>
 
 <hr />
 
 <h3 id="usage">Usage</h3>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.button</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="nv">$snap-blue</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="nv">$filter-buttons-height</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="nv">$global-padding</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.button {
+  background: @blue-500;
+  height: @filter-buttons-height;
+  padding: 0 @global-padding;
+}</code></pre></figure>
 
 <p>This compiles to:</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.button</span> <span class="p">{</span>
-  <span class="nl">background</span><span class="p">:</span> <span class="mh">#00a9ed</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">0</span> <span class="m">2%</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.button {
+  background: #6FB8F8;
+  height: 40px;
+  padding: 0 2%;
+}</code></pre></figure>
 
     </div>
 

@@ -16,7 +16,7 @@ Every element on the web that can contain content (not img, input, br, hr, etc.)
 
 This is used to make a small arrow that points to another element. We typically use this for special tooltips or dropdowns. You can see this more easily in the [Codepen Example](http://codepen.io/shaunrfox/pen/mENJjv?editors=1100).
 
-{% highlight scss %}
+{% highlight less %}
 .parent-element {
   position: relative;
   // Must set position for the carrot to work

@@ -2014,13 +2014,13 @@
     
       <li data-filter-id="css-text-handling"><a class="page-link" href="#css-text-handling" id="link-css-text-handling">CSS Text Handling</a></li>
     
-      <li data-filter-id="SCSS-color-variables"><a class="page-link" href="#SCSS-color-variables" id="link-SCSS-color-variables">SCSS Color Variables</a></li>
+      <li data-filter-id="Less-color-variables"><a class="page-link" href="#Less-color-variables" id="link-Less-color-variables">Less Color Variables</a></li>
     
-      <li data-filter-id="SCSS-SCSS-mixins"><a class="page-link" href="#SCSS-SCSS-mixins" id="link-SCSS-SCSS-mixins">SCSS Mixins</a></li>
+      <li data-filter-id="Less-mixins"><a class="page-link" href="#Less-mixins" id="link-Less-mixins">Less Mixins</a></li>
     
-      <li data-filter-id="scss-primer"><a class="page-link" href="#scss-primer" id="link-scss-primer">SCSS Primer</a></li>
+      <li data-filter-id="Less-primer"><a class="page-link" href="#Less-primer" id="link-Less-primer">Less Primer</a></li>
     
-      <li data-filter-id="variables-in-scss"><a class="page-link" href="#variables-in-scss" id="link-variables-in-scss">Variables in SCSS</a></li>
+      <li data-filter-id="variables-in-less"><a class="page-link" href="#variables-in-less" id="link-variables-in-less">Variables in Less</a></li>
     
 	</ul>
 </nav>
@@ -2084,17 +2084,17 @@
 
 <p><code class="highlighter-rouge">padding</code> can be defined on four sides of an element, like many things: top, right, bottom, left. This can be done as a shorthand or as individual values.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span> <span class="m">30px</span> <span class="m">0</span><span class="p">;</span>
-  <span class="cm">/* top: 10px, right: 20px, bottom: 30px, left: 0 */</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.my-class {
+  padding: 10px 20px 30px 0;
+  /* top: 10px, right: 20px, bottom: 30px, left: 0 */
+}
 
-<span class="c1">// or
-</span>
-<span class="nc">.my-class</span> <span class="p">{</span>
-  <span class="nl">padding-top</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-  <span class="nl">padding-left</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+// or
+
+.my-class {
+  padding-top: 20px;
+  padding-left: 40px;
+}</code></pre></figure>
 
 <hr />
 
@@ -2106,38 +2106,38 @@
 
 <p>A common trick for horizontally centering an element inside a larger parent is to set <code class="highlighter-rouge">margin: 0 auto;</code>. The <code class="highlighter-rouge">0</code> defines the top and bottom margin (a shorthand), and the <code class="highlighter-rouge">auto</code> defines the right and left. It should be noted that this only works if the element also has a width set.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.parent-element</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.parent-element {
+  width: 100%;
+  height: 100%;
+}
 
-<span class="nc">.child-element</span> <span class="p">{</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
-  <span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+.child-element {
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+}</code></pre></figure>
 
 <hr />
 
 <h2 id="border">border</h2>
 
-<h5 id="example-values-1px-solid-light-grey">EXAMPLE VALUES: <code class="highlighter-rouge">1px solid $light-grey</code></h5>
+<h5 id="example-values-1px-solid-grey-300">EXAMPLE VALUES: <code class="highlighter-rouge">1px solid @grey-300</code></h5>
 
 <p><code class="highlighter-rouge">border</code> is defined similar to padding and can be treated nearly the same. It can be defined on all sides at once or as individual attributes.</p>
 
 <p>We most commonly use the shorthand definitions listed below, but they can also be broken out on their own. The second example is also a common way we use it, defining multiple values as shorthand, but then overriding specific ones for an interaction or emphasis.</p>
 
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.element</span> <span class="p">{</span>
-  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$light-grey</span><span class="p">;</span>
-<span class="p">}</span>
+<figure class="highlight"><pre><code class="language-less" data-lang="less">.element {
+  border: 1px solid @grey-300;
+}
 
-<span class="nc">.other-element</span> <span class="p">{</span>
-  <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nv">$white</span><span class="p">;</span>
+.other-element {
+  border-bottom: 1px solid @white;
 
-  <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
-    <span class="nl">border-color</span><span class="p">:</span> <span class="nv">$blue</span><span class="p">;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+  &amp;:hover {
+    border-color: @blue-500;
+  }
+}</code></pre></figure>
 
 <hr />
 

@@ -12,6 +12,7 @@ Once you've cloned the repository, run `bundle install` from the root folder. If
 
 To run Jekyll locally, navigate to the project's folder and run `bundle exec guard`. This will compile your changes and watch for new ones, plus serve your site up at [localhost:4000/less-css-guide/](http://localhost:4000/less-css-guide/).
 
+(Run `exit` to stop serving/watching)
 
 ## How to create a new item in the list
 
